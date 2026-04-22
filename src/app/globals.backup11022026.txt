@@ -1,0 +1,1820 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');*/
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+/* Ajoutez ce bloc dans le fichier CSS global */
+/*@import "swiper/swiper-bundle.min.css";*/
+
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+*/
+
+/*
+p,h1,h2,h3{
+  font-family: Arial !important;
+}*/
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 5s ease-in-out infinite;
+}
+
+@keyframes float-extra-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float-extra-slow {
+  animation: float-extra-slow 12s ease-in-out infinite;
+}
+
+
+
+/*
+* {
+  font-family: "Prompt", sans-serif;  
+  font-style: normal;
+}
+*/
+
+.police2{
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.police3{
+  font-family: "Alegreya", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.police4{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.police5{
+  font-family: "Sofia", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.police6{
+  font-family: "Berkshire Swash", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.police7{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700 !important;
+  font-style: normal;
+}
+
+.police8{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300 !important;
+  font-style: normal;
+}
+.police8{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300 !important;
+  font-style: normal;
+}
+
+.police9{
+  font-family: "Arial Black";
+  font-style: normal;
+}
+
+.police10{
+  font-family: "Times New Roman";
+  font-style: normal;
+}
+/*
+* {
+  font-family: "Roboto Serif", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+*/
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+*/
+
+body {
+  background: #fff ;
+}
+
+
+
+
+
+/*
+.zigzag-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(21, 48, 52, 1) 20%, transparent 20%, transparent 40%, rgba(21, 48, 52, 1) 40%, rgba(21, 48, 52, 1) 60%, transparent 60%, transparent 80%, rgba(21, 48, 52, 1) 80%);
+  background-size: 35px 35px;
+  opacity: 0.8;
+  animation: zigzagWave 3s infinite ease-in-out alternate;
+}
+
+@keyframes zigzagWave {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+*/
+
+
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: #fff !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff !important;
+  width: 18px;
+  height: 18px;
+}
+
+
+/*
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+*/
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+/**/
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Vanilla CSS for flip card */
+.card {
+  perspective: 800px;
+}
+
+.card__content {
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover .card__content {
+  transform: rotateY(180deg); /* Flip effect */
+}
+
+.card__front,
+.card__back {
+  backface-visibility: hidden;
+}
+
+.card__back {
+  transform: rotateY(180deg); /* Flip the back of the card */
+}
+
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.clip-trapezoid {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  /*border-radius: 0px 0px 0px 25px; /* Simule l'arrondi des coins */
+}
+
+
+
+@media (min-width: 1024px) {
+  .swiper-button-prev {
+    left: -60px !important; /* déplace la flèche en dehors du carrousel */
+    right: auto;
+    margin-left: 0;
+  }
+
+  .swiper-button-next {
+    right: -60px !important; /* déplace la flèche à droite, en dehors du carrousel */
+    left: auto;
+    margin-right: 0;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none; /* Masque les icônes par défaut de Swiper si tu utilises tes propres flèches */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+
+/* Apparition avec déplacement vers le haut */
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUpAnim 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeSlideUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*****  DEBUT ANIMATION POUR LA PAGE MISSION  *****/
+
+.carte-conteneur {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 0px !important;
+  /*old -> gap: 24px;*/
+  margin-top: 32px;
+}
+
+.carte-fixe {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+/* Zone du titre et barre */
+.carte-fixe h4 {
+   display: -webkit-box;
+  -webkit-line-clamp: 3; /* nombre de lignes */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Assure que toutes les lignes aient la même hauteur */
+  line-height: 1.4em; 
+  min-height: calc(1.4em * 3); /* 3 lignes */
+  max-height: calc(1.4em * 3);
+}
+
+.carte-fixee h4 {
+   display: -webkit-box;
+  -webkit-line-clamp: 3; /* nombre de lignes */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Assure que toutes les lignes aient la même hauteur */
+  line-height: 1.4em; 
+  min-height: calc(0.9em * 3) !important; /* 3 lignes */
+  max-height: calc(1.4em * 3);
+}
+
+
+.carte-fixenew h4 {
+   display: -webkit-box;
+  -webkit-line-clamp: 3; /* nombre de lignes */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Assure que toutes les lignes aient la même hauteur */
+  line-height: 1.4em; 
+  min-height: calc(1.4em * 3); /* 3 lignes */
+  max-height: calc(1.4em * 3);
+}
+
+.carte-fixe .hr {
+  height: 5px;
+  width: 107px;
+  background: white;
+  border-radius: 11px;
+  margin: 10px 0 20px 0; /* identique pour toutes */
+}
+
+.carte-fixee .hr {
+  height: 5px;
+  width: 107px;
+  background: white;
+  border-radius: 11px;
+  margin: 10px 0 20px 0; /* identique pour toutes */
+}
+
+/* Zone texte */
+.carte-fixe .para {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  flex-grow: 1; /* pousse vers le bas si besoin */
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 8;        /* Nombre de lignes fixes */
+  -webkit-box-orient: vertical; /* Orientation verticale */
+  
+  overflow: hidden;             /* Masque le surplus */
+  text-overflow: ellipsis;      /* Ajoute "..." */
+  
+  line-height: 1.5em;           /* Hauteur de ligne */
+  min-height: calc(1.5em * 8);  /* Hauteur minimale pour 8 lignes */
+}
+.carte-fixee .para {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  flex-grow: 1; /* pousse vers le bas si besoin */
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 8;        /* Nombre de lignes fixes */
+  -webkit-box-orient: vertical; /* Orientation verticale */
+  
+  overflow: hidden;             /* Masque le surplus */
+  text-overflow: ellipsis;      /* Ajoute "..." */
+  
+  line-height: 1.5em;           /* Hauteur de ligne */
+  min-height: calc(1.5em * 8);  /* Hauteur minimale pour 8 lignes */
+}
+
+.carte-fixe .paranew {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  flex-grow: 1; /* pousse vers le bas si besoin */
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 8;        /* Nombre de lignes fixes */
+  -webkit-box-orient: vertical; /* Orientation verticale */
+  
+  overflow: hidden;             /* Masque le surplus */
+  text-overflow: ellipsis;      /* Ajoute "..." */
+  
+  line-height: 1.5em;           /* Hauteur de ligne */
+  /*min-height: calc(1.5em * 8); */
+}
+.carte-fixee .paranew {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  flex-grow: 1; /* pousse vers le bas si besoin */
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 8;        /* Nombre de lignes fixes */
+  -webkit-box-orient: vertical; /* Orientation verticale */
+  
+  overflow: hidden;             /* Masque le surplus */
+  text-overflow: ellipsis;      /* Ajoute "..." */
+  
+  line-height: 1.5em;           /* Hauteur de ligne */
+  /*min-height: calc(1.5em * 8); */
+}
+
+
+@media (max-width: 768px) {
+  .carte-conteneur {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  .carte-conteneur {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .carte-fixe {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .carte-fixee {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .carte-conteneur {
+      grid-template-columns: 1fr;
+    }
+  }
+h4{
+text-align:left;}
+p{
+
+}
+
+
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.carte-fixe {
+  animation: pulse 3s ease-in-out infinite;
+}
+.carte-fixee {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+
+/* Animation d'entrée : fade + slide up */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation légère en boucle : petit mouvement vertical */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Style de base avec transition pour hover */
+
+.carte-fixe {
+  opacity: 0; 
+  animation: 
+    fadeSlideUp 0.4s forwards, /* apparition plus rapide */
+    floatUpDown 1.5s ease-in-out infinite; /* mouvement plus rapide */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* transition plus rapide */
+  cursor: default;
+}
+
+.carte-fixee {
+  opacity: 0; 
+  animation: 
+    fadeSlideUp 0.4s forwards, /* apparition plus rapide */
+    floatUpDown 1.5s ease-in-out infinite; /* mouvement plus rapide */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* transition plus rapide */
+  cursor: default;
+}
+
+
+/* Délai animation entrée (fadeSlideUp) */
+
+.carte-fixe:nth-child(1) {
+  animation-delay: 0.1s, 0s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe:nth-child(2) {
+  animation-delay: 0.3s, 1s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe:nth-child(3) {
+  animation-delay: 0.5s, 2s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe:nth-child(4) {
+  animation-delay: 0.7s, 3s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+
+.carte-fixee:nth-child(1) {
+  animation-delay: 0.1s, 0s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixee:nth-child(2) {
+  animation-delay: 0.3s, 1s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixee:nth-child(3) {
+  animation-delay: 0.5s, 2s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixee:nth-child(4) {
+  animation-delay: 0.7s, 3s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+
+/* Animation au survol : priorité au hover, stop l’animation float */
+/*
+.carte-fixe:hover {
+  animation-play-state: paused !important;
+  transform: translateY(-10px) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+*/
+.liste-personnalisee {
+  list-style: none;      /* Supprime les puces par défaut */
+  padding-left: 1.5em;  /* Pour laisser un peu de marge */
+  margin: 0;
+  padding-bottom: 30px !important;
+}
+
+.liste-personnalisee li {
+  position: relative;
+  margin-bottom: 0.6em;
+  padding-left: 1.5em; /* espace pour la puce personnalisée */
+  /* Justification avancée */
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: pretty; /* Empêche les lignes mal équilibrées */
+  
+  /* Coupures de mots */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+}
+
+.liste-personnalisee li::before {
+  content: "✓";          /* ici on met la puce personnalisée (exemple: une coche) */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2e75d6;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1;
+  /* Justification avancée */
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: pretty; /* Empêche les lignes mal équilibrées */
+  
+  /* Coupures de mots */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+}
+
+/*****  FIN ANIMATION POUR LA PAGE MISSION  *****/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****  DEBUT ANIMATION POUR LA PAGE VISION  *****/
+
+.carte-conteneur2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.carte-conteneur3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px; /* desktop par défaut */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .carte-conteneur3 {
+    margin-top: -39px !important;
+  }
+}
+
+.carte-fixe2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.carte-fixe22 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+/* Zone du titre et barre */
+.carte-fixe2 h4 {
+   display: -webkit-box;
+  -webkit-line-clamp: 1; /* nombre de lignes */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Assure que toutes les lignes aient la même hauteur */
+  line-height: 1.4em; 
+  min-height: calc(1.4em * 1); /* 3 lignes */
+  max-height: calc(1.4em * 1);
+}
+
+.carte-fixe22 h4 {
+   display: -webkit-box;
+  /*-webkit-line-clamp: 1;*/
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  /* Assure que toutes les lignes aient la même hauteur */
+  line-height: 1.4em; 
+  min-height: calc(3.4em * 1);
+  max-height: calc(1.4em * 1);
+}
+
+.carte-fixe2 .hr {
+  height: 5px;
+  width: 107px;
+  background: white;
+  border-radius: 11px;
+  margin: 10px 0px 0px 0px; /*margin: 10px 0 20px 0; /* identique pour toutes */
+}
+
+.carte-fixe22 .hr {
+  height: 5px;
+  width: 107px;
+  background: white;
+  border-radius: 11px;
+  margin: 10px 0px 0px 0px; /*margin: 10px 0 20px 0; /* identique pour toutes */
+}
+
+/* Zone texte */
+.carte-fixe2 .para {
+  font-size: 14px;
+  color: #fff;
+  hyphens:auto !important;
+  -webkit-hyphens: auto !important;
+  -ms-hyphens: auto !important;
+  margin-bottom: -40px !important;
+  flex-grow: 1; /* pousse vers le bas si besoin */  
+  display: -webkit-box;
+  -webkit-line-clamp: 9;        /* Nombre de lignes fixes */
+  -webkit-box-orient: vertical; /* Orientation verticale */  
+  overflow: hidden;             /* Masque le surplus */
+  text-overflow: ellipsis;      /* Ajoute "..." */
+  
+  line-height: 1.5em;           /* Hauteur de ligne */
+  min-height: calc(1.5em * 9);  /* Hauteur minimale pour 8 lignes */
+  text-align: justify;
+  text-justify: inter-character; /* Répartit l'espace entre les lettres */
+  letter-spacing: -0.2px; /* Resserre très légèrement les caractères */
+  word-spacing: -1px;     /* Réduit l'espace maximum entre les mots */
+}
+
+.carte-fixe22 .para {
+  font-size: 14px;
+  color: #fff;
+  hyphens:auto !important;
+  -webkit-hyphens: auto !important;
+  -ms-hyphens: auto !important;
+  margin-bottom: -40px !important;
+  flex-grow: 1; /* pousse vers le bas si besoin */  
+  display: -webkit-box;
+  -webkit-line-clamp: 9;        /* Nombre de lignes fixes */
+  -webkit-box-orient: vertical; /* Orientation verticale */  
+  overflow: hidden;             /* Masque le surplus */
+  text-overflow: ellipsis;      /* Ajoute "..." */
+  
+  line-height: 1.5em;           /* Hauteur de ligne */
+  min-height: calc(1.5em * 9);  /* Hauteur minimale pour 8 lignes */
+  text-align: justify;
+  text-justify: inter-character; /* Répartit l'espace entre les lettres */
+  letter-spacing: -0.2px; /* Resserre très légèrement les caractères */
+  word-spacing: -1px;     /* Réduit l'espace maximum entre les mots */
+}
+
+
+@media (max-width: 768px) {
+  .carte-conteneur2 {
+    grid-template-columns: 1fr;
+  }
+  .carte-conteneur3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  .carte-conteneur2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .carte-conteneur3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .carte-fixe2 {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .carte-fixe22 {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .carte-conteneur2 {
+      grid-template-columns: 1fr;
+    }
+    .carte-conteneur3 {
+      grid-template-columns: 1fr;
+    }
+  }
+h4{
+text-align:left;}
+p{
+
+}
+
+
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.carte-fixe2 {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+
+/* Animation d'entrée : fade + slide up */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation légère en boucle : petit mouvement vertical */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Style de base avec transition pour hover */
+
+.carte-fixe2 {
+  opacity: 0; 
+  animation: 
+    fadeSlideUp 0.4s forwards, /* apparition plus rapide */
+    floatUpDown 1.5s ease-in-out infinite; /* mouvement plus rapide */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* transition plus rapide */
+  cursor: default;
+}
+
+
+/* Délai animation entrée (fadeSlideUp) */
+
+.carte-fixe2:nth-child(1) {
+  animation-delay: 0.1s, 0s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe2:nth-child(2) {
+  animation-delay: 0.3s, 1s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe2:nth-child(3) {
+  animation-delay: 0.5s, 2s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe2:nth-child(4) {
+  animation-delay: 0.7s, 3s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+
+.carte-fixe22:nth-child(1) {
+  animation-delay: 0.1s, 0s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe22:nth-child(2) {
+  animation-delay: 0.3s, 1s; 
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+.carte-fixe22:nth-child(3) {
+  animation-delay: 0.5s, 2s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 9px;
+  /*margin: 10px;*/
+}
+.carte-fixe22:nth-child(4) {
+  animation-delay: 0.7s, 3s;
+  animation-timing-function: ease forwards, ease-in-out;
+  margin: 10px;
+}
+
+
+/* Animation au survol : priorité au hover, stop l’animation float */
+/*
+.carte-fixe:hover {
+  animation-play-state: paused !important;
+  transform: translateY(-10px) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+*/
+.liste-personnalisee2 {
+  list-style: none;      /* Supprime les puces par défaut */
+  padding-left: 1.5em;   /* Marge gauche */
+  margin: 0;
+  padding-bottom: 0;     /* Pas de padding par défaut */
+}
+
+.liste-personnaliseenew {
+  list-style: none;      /* Supprime les puces par défaut */
+  padding-left: 1.5em;   /* Marge gauche */
+  margin: 0;
+  padding-bottom: 0;     /* Pas de padding par défaut */
+  /* Justification avancée */
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: pretty; /* Empêche les lignes mal équilibrées */
+  /* Coupures de mots */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+  letter-spacing: -0.2px; /* Resserre très légèrement les caractères */
+  word-spacing: -1px;     /* Réduit l'espace maximum entre les mots */
+
+
+  /* Coupures de mots */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+}
+
+/* Desktop seulement */
+@media (min-width: 769px) {
+  .liste-personnalisee2 {
+    padding-bottom: 30px !important;
+  }
+  .liste-personnaliseenew {
+    padding-bottom: 30px !important;
+  }
+}
+
+.liste-personnalisee2 li {
+  position: relative;
+  margin-bottom: 0.6em;
+  padding-left: 1.5em; /* espace pour la puce personnalisée */
+}
+
+.liste-personnaliseenew li {
+  position: relative;
+  margin-bottom: 0.6em;
+  padding-left: 1.5em; /* espace pour la puce personnalisée */  
+  /* Coupures de mots */
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: pretty; /* Empêche les lignes mal équilibrées */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+  letter-spacing: -0.2px !important; /* Resserre très légèrement les caractères */
+  word-spacing: -1px !important;     /* Réduit l'espace maximum entre les mots */
+  
+
+}
+
+.liste-personnalisee2 li::before {
+  content: "✓";          /* ici on met la puce personnalisée (exemple: une coche) */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2e75d6;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1;
+  /* Justification avancée */
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: pretty; /* Empêche les lignes mal équilibrées */
+  
+  /* Coupures de mots */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+  
+}
+
+.liste-personnaliseenew li::before {
+  content: "✓";          /* ici on met la puce personnalisée (exemple: une coche) */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff !important;
+  /*font-weight: bold;*/
+  font-size: 1.2em;
+  line-height: 1;
+  /* Justification avancée */
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: pretty; /* Empêche les lignes mal équilibrées */  
+  /* Coupures de mots */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+
+  /* Coupures de mots */
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  overflow-wrap: break-word;
+  letter-spacing: -0.2px; /* Resserre très légèrement les caractères */
+  word-spacing: -1px;     /* Réduit l'espace maximum entre les mots */
+
+
+}
+
+/*****  FIN ANIMATION POUR LA PAGE MISSION  *****/
+
+
+.shrunk {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+  animation: shrinkLoop 3s infinite alternate ease-in-out;
+}
+
+.shrunk:hover {
+  animation-play-state: paused;
+}
+
+@keyframes shrinkLoop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mission1,.vision1 {
+  background: linear-gradient(to bottom, #4a90e2, #2e75d6, #1a4f8b); /* bleu clair → bleu moyen → bleu foncé */
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 530px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre plus douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission1:hover,.vision1:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique et élégant */
+}
+
+
+
+.mission4491,.vision4491 {
+  background: linear-gradient(to bottom, #4a90e2, #2e75d6, #1a4f8b); /* bleu clair → bleu moyen → bleu foncé */
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 449px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre plus douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission4491:hover,.vision4491:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique et élégant */
+}
+
+
+.visionnew {
+  background: linear-gradient(to bottom, #4a90e2, #2e75d6, #1a4f8b); /* bleu clair → bleu moyen → bleu foncé */
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 513px; /* desktop par défaut */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.missionnew,
+.visionnew {
+  background: linear-gradient(to bottom, #4a90e2, #2e75d6, #1a4f8b); /* bleu clair → bleu moyen → bleu foncé */
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 513px; /* desktop par défaut */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.missionnewimg{
+  background: linear-gradient(to bottom, #4a90e2, #2e75d6, #1a4f8b); /* bleu clair → bleu moyen → bleu foncé */
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 441px; /* desktop par défaut */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission2newimg{
+  background: linear-gradient(to bottom, #76BF42, #5FA230, #4B8126);
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 441px; /* desktop par défaut */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Mobile (max-width: 768px par ex.) */
+@media (max-width: 768px) {
+  .missionnew,
+  .visionnew {
+    height: 653px;
+  }
+}
+
+@media (max-width: 768px) {
+  .missionnewimg,.mission2newimg{
+    height: 289px !important;
+  }
+}
+
+.missionnew:hover,.visionnew:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique et élégant */
+
+}
+.missionnewimg:hover,.mission2newimg:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique et élégant */
+}
+
+
+.mission2,.vision2 {
+  background: linear-gradient(to bottom, #ff4b4f, #e41b1f, #b71c1c); /* rouge clair → rouge moyen → rouge foncé */
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 530px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission2:hover,.vision2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique */
+}
+
+
+.mission2449,.vision2449 {
+  background: linear-gradient(to bottom, #ff4b4f, #e41b1f, #b71c1c); /* rouge clair → rouge moyen → rouge foncé */
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 449px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission2449:hover,.vision2449:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique */
+}
+
+.mission2new,
+.vision2new {
+  background: linear-gradient(to bottom, #76BF42, #5FA230, #4B8126);
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 513px; /* desktop par défaut */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.myflexbox {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  gap: 24px;
+  background: #f9fbff;
+  border: 1px solid #d0d7e2;
+  border-radius: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  /* ⚠️ padding-bottom: -50px est invalide → remplacé par 0 */
+  padding-bottom: 0;
+  box-shadow: 0 4px 12px rgb(173 173 173);
+  height:404px !important; /* desktop par défaut */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .myflexbox {
+    height: 527px !important;
+  }
+}
+
+.myflexbox2 {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  gap: 24px;
+  background: #f9fbff;
+  border: 1px solid #d0d7e2;
+  border-radius: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  /* ⚠️ padding-bottom: -50px est invalide → remplacé par 0 */
+  padding-bottom: 0;
+  box-shadow: 0 4px 12px rgb(173 173 173);
+  height:404px !important; /* desktop par défaut */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .myflexbox2 {
+    height: 645px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .mission2new,
+  .vision2new {
+    height: 653px;
+  }
+}
+
+
+.mission33new,.vision33new {
+  background: linear-gradient(to bottom, #76BF42, #5FA230, #4B8126);
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 449px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission44new,.vision44new {
+  background: linear-gradient(to bottom, #ff4b4f, #e41b1f, #b71c1c);
+
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 449px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission22new,.vision22new {
+  background: linear-gradient(to bottom, #607d8b,#607d8b, #607d8b);
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 110px;
+  height: 449px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre douce et profonde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission2new:hover,.vision2new:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique */
+}
+
+
+.mission3,.vision3 {
+  background: linear-gradient(to bottom, #ffdc4d, #e4b801, #b38f00); /* jaune clair → jaune doré → jaune foncé */
+  padding: 16px;
+  border-radius: 16px;
+  height: 530px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre esthétique */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission3449,.vision3449 {
+  background: linear-gradient(to bottom, #ffdc4d, #e4b801, #b38f00); /* jaune clair → jaune doré → jaune foncé */
+  padding: 16px;
+  border-radius: 16px;
+  height: 449px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre esthétique */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h4{
+  font-weight: 700 !important;
+}
+
+.textestyle {
+  font-size: 16px;
+  font-weight: 0 !important;
+  margin-top: -195px !important; /* Valeur par défaut (desktop) */
+}
+
+/* Version mobile */
+@media screen and (max-width: 768px) {
+  .textestyle {
+    margin-top: -152px !important;
+  }
+}
+
+.mission3:hover,.vision3:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique */
+}
+
+
+.mission4,.vision4 {
+  background: linear-gradient(to bottom, #a6d84c, #7eb928, #5a8a1f); /* vert clair → vert moyen → vert foncé */
+  padding: 16px;
+  border-radius: 16px;
+  height: 449px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); /* ombre esthétique */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mission4:hover,.vision4:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4); /* effet hover dynamique */
+}
+
+p > strong {
+  line-height: 5px !important;
+}
+
+
+
+
+
+.video-gallery {
+  display: grid;
+  gap: 16px; /* espace entre les vidéos */
+  grid-template-columns: repeat(1, 1fr); /* 1 colonne par défaut */
+  margin-top: 24px;
+}
+
+@media (min-width: 640px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes sur grand écran */
+  }
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 80.25%; /* ratio 16:9 */
+  overflow: hidden;
+  border-radius: 12px; /* coins arrondis */
+  /*box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* ombre */
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Remplace cover par contain */
+  border-radius: 12px;
+  background: black; /* pour éviter les zones vides transparentes */
+}
+
+
+@media (max-width: 768px) {
+  .custom_gestion_etab {
+    margin-top: -58px !important;
+    margin-bottom: -115px !important;
+  }
+}
+
+
+
+
+  .custom_mission {
+    /*margin-top: -290px !important;*/
+  }
+
+@media (max-width: 768px) {
+  .custom_mission {
+    margin-top: -58px !important;
+    margin-bottom: -115px !important;
+  }
+}
+
+
+.custom_mission_p_right {
+  margin-top: 0; /* pas de marge par défaut (mobile) */
+}
+
+/* Desktop seulement */
+@media (min-width: 769px) {
+  .custom_mission_p_right {
+    margin-top: -101px;
+  }
+}
+
+.custom_mission_p_right_fr {
+  margin-top: 0; /* pas de marge par défaut (mobile) */
+}
+.custom_mission_p_right_fr_2 {
+  margin-top: 0; /* pas de marge par défaut (mobile) */
+}
+
+/* Desktop seulement */
+@media (min-width: 769px) {
+  .custom_mission_p_right_fr {
+    margin-top: -23px;
+    /*margin-top: -70px;*/
+  }
+  .custom_mission_p_right_fr_2 {
+    margin-top: -0px;
+    /*margin-top: -70px;*/
+  }
+}
+
+  .custom_mission_p {
+    margin-top: 11px;    
+  }
+
+  ul > li {
+    font-size: 17px;
+  }
+
+@media (max-width: 768px) {
+  .custom_mission_p {
+    padding: 11px;    
+    margin-bottom: -80px;
+  }
+}
+
+
+/* Par défaut, pas d'espace */
+  .mobile-spacer {
+    height: 0;
+  }
+
+  /* Sur mobile, on ajoute de l'espace */
+  @media (max-width: 768px) {
+    .mobile-spacer {
+      height: 50px; /* ajuste la valeur selon l'espace désiré */
+    }
+  }
+
+
+/* Par défaut : espace sur desktop */
+.desktop-spacer {
+  height: 50px; /* ajuste selon l'espace souhaité */
+}
+
+/* Sur mobile, on retire l'espace */
+@media (max-width: 768px) {
+  .desktop-spacer {
+    height: 0;
+  }
+}
+
+
+
+    @media (max-width: 768px) {
+    .fade-slide-up > div {
+      flex-direction: column !important;
+    }
+  }
+
+
+
+  .mobile-margin-top {
+  margin-top: 0; /* par défaut sur desktop */
+}
+
+/* Mobile uniquement */
+@media (max-width: 768px) {
+  .mobile-margin-top {
+    margin-top: -50px !important;
+  }
+}
+
+
+.hotelhilton {
+  margin-top: 0;    /* desktop par défaut */
+  margin-bottom: 0; /* desktop par défaut */
+}
+
+/* Mobile uniquement */
+@media (max-width: 768px) {
+  .hotelhilton {
+    margin-top: -30px !important;
+    margin-bottom: -30px !important;
+  }
+}
+
+
+.desktop-padding-horizontal {
+  padding-left: 14px !important;   /* par défaut mobile */
+  padding-right: 14px !important;  /* par défaut mobile */
+}
+
+/* Desktop uniquement */
+@media (min-width: 769px) {
+  .desktop-padding-horizontal {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+.desktop-padding-20 {
+  padding-left: 0;   /* mobile par défaut */
+  padding-right: 0;  /* mobile par défaut */
+}
+
+/* Desktop uniquement */
+@media (min-width: 769px) {
+  .desktop-padding-20 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-top: 10px;
+  }
+}
+
+
+/* Taille par défaut mobile/tablette */
+p {
+  font-size: 16px;
+  font-family: Arial, sans-serif !important;
+}
+
+/* Taille uniquement sur desktop (≥ 1024px par ex.) */
+@media (min-width: 1024px) {
+  p {
+    font-size: 17px !important;
+    font-family: Arial, sans-serif !important;
+  }
+}
+
+span{
+  font-family: Arial, sans-serif !important;
+}
+
+.liste-personnaliseenew,.liste-personnalisee,.liste-personnalisee2{
+  margin-left: -20px !important;
+}
+
+
+/* Par défaut (mobile / tablette) */
+.img_mission_desc {
+  margin-top: 0;
+}
+
+/* Desktop uniquement */
+@media (min-width: 1024px) {
+  .img_mission_desc {
+    margin-top: -101px;
+  }
+}
+
+
+
+/* Par défaut (mobile / tablette) */
+.mtopdesk_mission {
+  margin-top: 0;
+}
+
+/* Desktop uniquement */
+@media (min-width: 1024px) {
+  .mtopdesk_mission {
+    margin-top: 18px;
+  }
+}
+
+
+/* Mobile par défaut */
+.mission-gap {
+  gap: 24px !important;
+}
+
+/* Desktop uniquement */
+@media (min-width: 1024px) {
+  .mission-gap {
+    gap: 14px !important;
+  }
+}
+
+
+
+.img_mission_desc {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+/* 📱 Mobile uniquement */
+@media (max-width: 767px) {
+  .custom_mission.img_mission_desc {
+    margin-top: -132px !important;
+    top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* 🖥 Desktop & tablette */
+@media (min-width: 768px) {
+  .custom_mission.img_mission_desc {
+    margin-top: -100px !important;
+  }
+}

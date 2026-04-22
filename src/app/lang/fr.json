@@ -1,0 +1,367 @@
+{
+  "nav": {
+    "accueil": "Accueil",
+    "apropos": "À Propos",
+    "forum": "Le Forum 2026",
+    "actualites": "Actualités",
+    "inscription": "Inscriptions",
+    "mediatheque": "Médiathèque",
+    "contact": "Contact",
+    "sub_apropos": {
+      "philosophie": "Vision fondatrice",
+      "mot": "Le mot du Commissaire Général",
+      "ministere": "Parties prenantes",
+      "equipe": "L’Équipe",
+      "partenaires": "Les partenaires",
+      "palais": "Le Palais des Congrès"
+    },
+    "sub_forum": {
+      "thematique": "La thématique",
+      "programme": "Le programme",
+      "intervenants": "Les intervenants"
+    }
+  },
+  "Footer": {
+    "newsletter": {
+      "text": "Abonnez-vous pour recevoir les dernières actualités.",
+      "placeholder": "VOTRE EMAIL",
+      "button": "OK"
+    },
+    "explorer": "Explorer",
+    "contact": {
+      "org": "Commissariat Général aux Expositions du Gabon",
+      "city": "Libreville, Gabon"
+    },
+    "rights": "Tous droits réservés"
+  },
+  "ApiResponses": {
+    "success": "Inscription réussie !",
+    "already_exists": "Cet email est déjà inscrit.",
+    "invalid_email": "L'adresse email est invalide.",
+    "error": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "Metadata": {
+    "title": "Forum de Libreville",
+    "description": "Forum international réunissant décideurs, entreprises et institutions pour promouvoir la croissance en Afrique.",
+    "contact": {
+      "title": "Forum de Libreville | Nous Contacter",
+      "description": "Une question sur les inscriptions ou un partenariat ? Le secrétariat permanent du Forum de Libreville est à votre disposition pour vous accompagner."
+    },
+    "mediatheque": {
+      "title": "Forum de Libreville | Médiathèque & Archives",
+      "description": "Archives & Multimédia : explorez nos galeries exclusives pour un regard immersif sur les décideurs et les innovations qui transforment notre continent."
+    },
+    "inscription": {
+      "title": "Forum de Libreville | Inscription au Forum",
+      "description": "Rejoindre le mouvement : Réservez votre place pour accèder aux sessions et devenez acteur de l'innovation et de la transformation."
+    },
+    "actualites": {
+      "title": "Forum de Libreville | Les Actualités du Forum",
+      "description": "Retrouvez ici toute l'actualité, les projets structurants et les moments forts du Forum de Libreville."
+    },
+    "thematique": {
+      "title": "Forum de Libreville | La Thématique du Forum",
+      "description": "Vision & Stratégie : découvrez le fil conducteur de l'édition 2026. Une analyse profonde des leviers de croissance pour bâtir une économie forte."
+    },
+    "philosophie": {
+    "title": "Forum de Libreville | Vision Fondatrice",
+    "description": "Un carrefour stratégique dédié à la transformation économique et technologique, au service d'une croissance durable et inclusive pour l'Afrique."
+    },
+    "programme": {
+      "title": "Forum de Libreville | Le Programme du Forum",
+      "description": "Agenda & Sessions : explorez le déroulement de l'édition 2026. Des panels de haut niveau aux ateliers immersifs, planifiez votre immersion au cœur du débat."
+    },
+    "intervenants": {
+      "title": "Forum de Libreville | Les Intervenants du Forum",
+      "description": "Rencontrez les décideurs et visionnaires qui façonnent l'avenir lors du Forum de Libreville 2026."
+    },
+    "mot": {
+      "title": "Forum de Libreville | Le Mot du Commissaire Générale",
+      "description": "Découvrez le message de la Commissaire Générale du Forum."
+   },
+    "ministere": {
+    "title": "Forum de Libreville | Parties prenantes",
+    "description": "Découvrez les institutions derrière le Forum de Libreville : une synergie entre diplomatie internationale et promotion des investissements gabonais."
+   },
+   "equipe": {
+      "title": "Forum de Libreville | L'Équipe du Forum",
+      "description": "Capital humain : découvrez la synergie d'experts et de décideurs passionnés unis pour faire rayonner le savoir-faire gabonais."
+    },
+    "partenaires": {
+      "title": "Forum de Libreville | Les Partenaires du Forum",
+      "description": "Une synergie d'experts et de décideurs passionnés, unis par la volonté de faire rayonner le savoir-faire gabonais à travers des partenariats stratégiques."
+    },
+    "palais": {
+      "title": "Forum de Libreville | Le Palais des Congrès Omar Bongo Ondimba",
+      "description": "Découvrez le prestigieux Palais des congrès Omar Bongo Ondimba, inauguré en 2026."
+    }
+  },
+  "Contact": {
+    "header": {
+      "label": "Contacts",
+      "title": "Nous contacter",
+      "subtitle": "autour du forum",
+      "description": "Une question sur les modalités d'inscription ou une proposition de partenariat ? Notre secrétariat permanent est à votre disposition pour vous accompagner."
+    },
+    "info": {
+      "badge": "Contact Officiel",
+      "title": "Restons en contact",
+      "text": "Pour toute demande d’information complémentaire, d’accréditation presse ou pour explorer des opportunités de partenariat stratégique, notre équipe dédiée vous répondra dans les plus brefs délais."
+    },
+    "form": {
+      "nameLabel": "Nom Complet",
+      "namePlaceholder": "Ex: Jean-marc",
+      "emailLabel": "Email Professionnel",
+      "subjectLabel": "Objet de la demande",
+      "subjects": {
+        "info": "Demande d'information",
+        "accrit": "Demande d'accréditation",
+        "partner": "Opportunité de Partenariat",
+        "press": "Presse & Médias"
+      },      
+      "messageLabel": "Votre Message",
+      "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+      "submit": "Envoyer le message"
+    }
+  },
+  "Mediatheque": {
+    "header": {
+      "badge": "Archives - Multimédia",
+      "titre1": "Médiathèque",
+      "titre2": "& archives",
+      "sousTitre": "Photos, vidéos, discours, documents officiels et synthèses des panels seront disponibles dans cet espace à l’issue du Forum."
+    },
+    "grid": {
+      "label": "Médiathèque",
+      "filters": {
+        "all": "Tous",
+        "photos": "Photos",
+        "videos": "Vidéos",
+        "documents": "Documents"
+      },
+      "searchPlaceholder": "RECHERCHER DANS LES ARCHIVES...",
+      "noResults": "Aucune archive ne correspond."
+    },
+    "types": {
+      "video": "Vidéo",
+      "photo": "Photo"
+    },
+    "noContent": "Aucun contenu disponible pour le moment.",
+    "loading": "Récupération des archives..."
+  },
+  "Inscription": {
+    "header": {
+      "badge": "Participez au Forum",
+      "title": "",
+      "subtitle": "le mouvement",
+      "description": "Réservez votre place pour accéder aux sessions et devenez acteur du développement économique."
+    },
+    "info": {
+      "badge": "Forum 2026",
+      "title": "Formulaire d'inscription",
+      "text": "Afin de garantir la qualité des échanges et le respect des protocoles de sécurité, nous vous invitons à renseigner vos informations professionnelles avec précision. Votre demande sera examinée par le secrétariat permanent pour validation de votre participation officielle."
+    },
+    "form": {
+      "title": "Inscription",
+      "subtitle": "Accès prioritaire aux conférences",
+      "labels": {
+        "civility": "Civilité",
+        "title": "Titre / Rang",
+        "lastName": "Nom",
+        "firstName": "Prénom",
+        "email": "Email Professionnel",
+        "organization": "Organisation",
+        "sector": "Secteur d'activité",
+        "nationality": "Nationalité",
+        "country": "Pays de résidence",
+        "city": "Ville",
+        "whatsapp": "WhatsApp",
+        "photo": "Photo d'identité"
+      },
+      "placeholders": {
+        "select": "Choisir...",
+        "lastName": "VOTRE NOM",
+        "firstName": "VOTRE PRÉNOM",
+        "organization": "NOM DE LA STRUCTURE"
+      },
+      "submit": "Finaliser l'inscription"
+    },
+    "options": {
+      "civility": {
+        "m": "Monsieur (M.)",
+        "mme": "Madame (Mme)"
+      },
+      "titles": {
+        "dr": "Docteur (Dr)",
+        "prof": "Professeur (Prof.)",
+        "amb": "Ambassadeur (S.E.)",
+        "ing": "Ingénieur",
+        "min": "Ministre"
+      },
+      "sectors": {
+        "gouvernement": "Gouvernement",
+        "diplomatie": "Diplomatie & Coopération",
+        "administration": "Administration",
+        "developpement": "Développement",
+        "industrie": "Industrie",
+        "mines": "Mines",
+        "commerce": "Commerce",
+        "it": "IT/Numérique",
+        "communication": "Communication",
+        "agribusiness": "Agribusiness/Agriculture",
+        "conseil": "Conseil",
+        "environnement": "Environnement & Développement durable",
+        "presse": "Presse & Médias",
+        "autre": "Autre"
+      },
+      "countries": {
+        "gabon": "GABON",
+        "cotedivoire": "CÔTE D'IVOIRE",
+        "senegal": "SÉNÉGAL",
+        "cameroun": "CAMEROUN",
+        "france": "FRANCE"
+      }
+    }
+  },
+  "Actualites": {
+  "header": {
+    "badge": "Actualités du Forum",
+    "titre1": "Les Actualités",
+    "titre2": "du Forum",
+    "sousTitre": "Retrouvez ici les annonces officielles, les communiqués, les interviews, ainsi que les informations relatives à la préparation du Forum International de Libreville."
+  },
+  "categories": {
+    "communique": "Communiqués",
+    "economie": "Économie",
+    "technologie": "Technologie",
+    "gouvernance": "Gouvernance",
+    "invest": "Investissements"
+  },
+  "articles": {
+    "ia": {
+      "title": "L'IA transforme les services publics au Gabon",
+      "excerpt": "Un décryptage complet sur l'intégration des solutions numériques..."
+    },
+    "energie": {
+      "title": "Signature d'un mémorandum sur l'énergie verte",
+      "excerpt": "Les investisseurs internationaux se positionnent sur le secteur..."
+    }
+  },
+  "sidebar": {
+    "search": "Recherche",
+    "placeholder": "Mots-clés...",
+    "categories": "Rubriques",
+    "reset": "Réinitialiser les filtres",
+    "no_categories": "Aucune rubrique disponible"
+  },
+  "status": {
+    "loading": "Chargement...",
+    "no_results": "Aucun résultat trouvé."
+  },
+  "pagination": {
+    "total": "Total : {count} articles"
+  },
+  "back": "Retour aux actualités"
+  },
+  "Thematique": {
+    "header": {
+      "badge": "Vision - stratégie",
+      "titre1": "La thématique",
+      "titre2": "du forum",
+      "sousTitre": "Découvrez le fil conducteur de cette édition 2026. Une analyse profonde des leviers de croissance et des défis structurels pour bâtir une économie forte."
+    },
+    "details": {
+      "badge": "Thématique 2026",
+      "title": "Démocratie, Climat des Affaires & Intelligence Artificielle",
+      "description": "La thématique 2026 s’inscrit dans un moment clé pour le Gabon, engagé dans des <bold>réformes institutionnelles et économiques</bold> destinées à renforcer la stabilité, la transparence et la confiance.<br /><br />Les expériences internationales montrent que la qualité de la gouvernance et la prévisibilité des institutions sont des facteurs déterminants pour attirer les investissements.<br /><br />En articulant <bold>démocratie, climat des affaires et innovation technologique</bold>, le Forum met en lumière les leviers capables de transformer durablement les économies africaines et de restaurer durablement la confiance des partenaires internationaux."
+    }
+  },
+  "Philosophie": {
+    "header": {
+      "badge": "Notre vision",
+      "titre1": "Ambition",
+      "titre2": "du Forum",
+      "sousTitre": "Réconcilier la stabilité démocratique et la performance économique pour bâtir l'avenir du Gabon."
+    },
+    "content": {
+      "title": "Le Forum International de Libreville",
+      "text": "Le Forum International de Libreville s’inscrit dans la vision portée par <bold>Son Excellence Brice Clotaire Oligui Nguema</bold>, Président de la République, Chef de l’État, Chef du Gouvernement : bâtir un Gabon stable, transparent et résolument tourné vers l’innovation.<br /><br />Sous son leadership, le pays engage une <bold>transformation profonde</bold> visant à restaurer la confiance, moderniser la gouvernance et créer un environnement économique capable d’attirer durablement les investissements. Cette vision repose sur une conviction forte : la stabilité institutionnelle, la transparence économique et l’innovation constituent les fondations d’une croissance durable et inclusive.<br /><br />Dans ce contexte de réformes structurantes, le Gabon affirme sa volonté de devenir un espace d’ouverture, de coopération et d’opportunités pour l’Afrique et le monde. Le Forum crée un cadre où se rencontrent leadership politique, expertise technique et engagement du secteur privé, afin de produire des recommandations concrètes, favoriser les partenariats et installer <bold>Libreville comme une capitale du dialogue stratégique</bold> et de la transformation institutionnelle en Afrique."
+    }
+  },
+  "MotCommissaire": {
+  "header": {
+    "badge": "Le mot de",
+    "titre1": "La commissaire",
+    "titre2": "Générale",
+    "sousTitre": "Message de bienvenue et vision stratégique."
+  },
+  "content": {
+    "title": "Chers participants,",
+    "badge": "Perspectives 2026",
+    "text": "Bienvenue au Forum de Libreville... <bold>le développement de l'Afrique</bold>."
+  }
+  },
+  "Equipe": {
+    "header": {
+      "badge": "Capital Humain",
+      "titre1": "L'Équipe",
+      "titre2": "du forum",
+      "sousTitre": "Une synergie d'experts et de décideurs engagés pour la réussite de l'événement."
+    },
+    "content": {
+      "title": "Synergie & Expertise",
+      "description": "Le Forum de Libreville est porté par une équipe multidisciplinaire alliant expertise stratégique, logistique de pointe et vision diplomatique.",
+      "loading": "Chargement ..."
+    }
+  },
+  "Partenaires": {
+    "header": {
+      "badge": "Partenaires",
+      "titre1": "Les partenaires",
+      "titre2": "du Forum",
+      "sousTitre": "Une synergie d'experts et de décideurs passionnés, unis par la volonté de faire rayonner le savoir-faire gabonais."
+    },
+    "presentation": {
+      "badge": "Présentation de nos partenaires",
+      "title": "Les partenaires stratégiques",
+      "description": "Le Forum s’appuie sur un réseau de partenaires institutionnels, économiques et techniques engagés dans la transformation du continent.<br /><br />Leur contribution renforce la qualité des échanges. <bold>C'est plus de 50 institutions engagées.</bold>"
+    },
+    "grid": {
+      "title": "Nos Partenaires",
+      "titleAccent": "Stratégiques",
+      "description": "Une alliance stratégique entre vision publique et agilité privée."
+    }
+  },
+  "Palais": {
+    "header": {
+      "badge": "Libreville - Gabon",
+      "titre1": "Palais des congrès",
+      "titre2": "Omar Bongo Ondimba",
+      "sousTitre": "Inauguré en 2026, à l’occasion du Forum International de Libreville."
+    },
+    "presentation": {
+      "badge": "Espace de Prestige",
+      "title": "Le Palais des Congrès Omar Bongo Ondimba",
+      "description": "Inauguré en 2026 (plus de 3000 places), le <bold>Palais des Congrès Omar Bongo Ondimba</bold> s’impose comme une infrastructure moderne.<br /><br />Édifié au cœur de la Cité de la Démocratie, il répond à la vision de <bold>Son Excellence Brice Clotaire Oligui Nguema</bold>."
+    },
+    "gallery": {
+      "badge": "Aperçu",
+      "title": "L'Excellence en images"
+    }
+  },
+  "Ministere": {
+    "header": {
+      "badge": "Tutelle Institutionnelle",
+      "titre1": "Parties",
+      "titre2": "prenantes",
+      "sousTitre": "Le socle institutionnel et stratégique du Forum."
+    },
+    "content": {
+      "badge": "Gouvernement",
+      "title": "Action Gouvernementale",
+      "text": "Le Ministère des Affaires étrangères et le Ministère de l’Économie s’unissent pour promouvoir les investissements et le rayonnement international du Gabon."
+    }
+  }
+  
+  
+}

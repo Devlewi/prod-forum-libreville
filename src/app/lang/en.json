@@ -1,0 +1,363 @@
+{
+  "nav": {
+    "accueil": "Home",
+    "apropos": "About",
+    "forum": "2026 Forum",
+    "actualites": "News",
+    "inscription": "Registration",
+    "mediatheque": "Media Library",
+    "contact": "Contact",
+    "sub_apropos": {
+      "philosophie": "Founding vision",
+      "mot": "General Commissioner's Word",
+      "ministere": "Stakeholders",
+      "equipe": "The Team",
+      "partenaires": "Partners",
+      "palais": "Conference Center"
+    },
+    "sub_forum": {
+      "thematique": "Theme",
+      "programme": "Program",
+      "intervenants": "Speakers"
+    }
+  },
+  "Footer": {
+    "newsletter": {
+      "text": "Subscribe to receive the latest news.",
+      "placeholder": "YOUR EMAIL",
+      "button": "OK"
+    },
+    "explorer": "Explore",
+    "contact": {
+      "org": "General Exhibition Commission of Gabon",
+      "city": "Libreville, Gabon"
+    },
+    "rights": "All rights reserved"
+  },
+  "Metadata": {
+    "title": "Libreville Forum",
+    "description": "International forum bringing together decision-makers, companies, and institutions to promote growth in Africa.",
+    "contact": {
+      "title": "Libreville Forum | Contact Us",
+      "description": "Any questions about registration or partnership? The permanent secretariat of the Libreville Forum is at your disposal to assist you."
+    },
+    "mediatheque": {
+      "title": "Libreville Forum | Media Library & Archives",
+      "description": "Archives & Multimedia: explore our exclusive galleries for an immersive look at the decision-makers and innovations transforming our continent."
+    },
+    "inscription": {
+      "title": "Libreville Forum | Forum Registration",
+      "description": "Join the movement: Reserve your spot to access the sessions and become a driving force for innovation and transformation."
+    },
+    "actualites": {
+      "title": "Libreville Forum | Forum News",
+      "description": "Find all the latest news, key initiatives, and highlights from the Libreville Forum here"
+    },
+    "thematique": {
+      "title": "Libreville Forum | The Forum Theme",
+      "description": "Vision & Strategy: discover the main theme of the 2026 edition. An in-depth analysis of growth levers to build a strong and resilient economy."
+    },
+    "philosophie": {
+      "title": "Libreville Forum | Founding Vision",
+      "description": "A strategic hub dedicated to economic and technological transformation, driving sustainable and inclusive growth for Africa."
+    },
+    "programme": {
+    "title": "Libreville Forum | Forum Schedule",
+    "description": "Agenda & Sessions: explore the 2026 edition schedule. From high-level panels to immersive workshops, plan your experience at the heart of the debate."
+  },"intervenants": {
+      "title": "Libreville Forum | Forum Speakers",
+      "description": "Meet the policymakers and visionaries shaping the future. A synergy of influential voices to decode strategic challenges at the Libreville Forum 2026."
+    },
+    "mot": {
+    "title": "Libreville Forum | Commissioner General's Message",
+    "description": "Discover the official message from the Commissioner General of the Libreville Forum."
+  },
+  "ministere": {
+    "title": "Libreville Forum | Stakeholders",
+    "description": "Discover the organizations behind the Libreville Forum: a synergy between international diplomacy and the promotion of investment in Gabon."
+   },
+  "equipe": {
+      "title": "Libreville Forum | The Forum Team",
+      "description": "Human Capital: discover the synergy of passionate experts and decision-makers united to showcase Gabonese expertise."
+    },
+    "partenaires": {
+      "title": "Libreville Forum | Our Partners",
+      "description": "A synergy of passionate experts and decision-makers, united by the will to promote Gabonese expertise through strategic partnerships."
+    },
+    "palais": {
+      "title": "Libreville Forum | Omar Bongo Ondimba Convention Center",
+      "description": "Discover the prestigious Omar Bongo Ondimba Convention Center, inaugurated in 2026."
+    }
+  },
+  "ApiResponses": {
+    "success": "Successfully subscribed!",
+    "already_exists": "This email is already registered.",
+    "invalid_email": "The email address is invalid.",
+    "error": "An error occurred. Please try again."
+  },
+  "Contact": {
+    "header": {
+      "label": "Contacts",
+      "title": "Contact us",
+      "subtitle": "around the forum",
+      "description": "A question about registration procedures or a partnership proposal? Our permanent secretariat is at your disposal to support you."
+    },
+    "info": {
+      "badge": "Official Contact",
+      "title": "Stay in touch",
+      "text": "For any request for additional information, press accreditation, or to explore strategic partnership opportunities, our dedicated team will get back to you as soon as possible."
+    },
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Ex: Jean-marc",
+      "emailLabel": "Professional Email",
+      "subjectLabel": "Subject of the request",
+      "subjects": {
+        "info": "Information Request",
+        "accrit": "Accreditation Request",
+        "partner": "Partnership Opportunity",
+        "press": "Press & Media"
+      },
+      "messageLabel": "Your Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send message"
+    }
+  },
+  "Mediatheque": {
+    "header": {
+      "badge": "Archives - Multimedia",
+      "titre1": "Media Center",
+      "titre2": "& archives",
+      "sousTitre": "Photos, videos, speeches, official documents, and panel summaries will be available here after the Forum concludes."
+    },
+    "grid": {
+      "label": "Media Center",
+      "filters": {
+        "all": "All",
+        "photos": "Photos",
+        "videos": "Videos",
+        "documents": "Documents"
+      },
+      "searchPlaceholder": "SEARCH ARCHIVES...",
+      "noResults": "No matching archives found."
+    },
+    "types": {
+      "video": "Vidéo",
+      "photo": "Photo"
+    },
+    "noContent": "No content available at the moment.",
+    "loading": "Retrieving archives..."
+  },
+  "Inscription": {
+    "header": {
+      "badge": "Join the Forum",
+      "title": "",
+      "subtitle": "the movement",
+      "description": "Book your place to access the sessions and become a key player in economic development."
+    },
+    "info": {
+      "badge": "Forum 2026",
+      "title": "Registration Form",
+      "text": "In order to guarantee the quality of exchanges and respect for security protocols, we invite you to fill in your professional information accurately. Your application will be reviewed by the permanent secretariat for validation of your official participation."
+    },
+    "form": {
+      "title": "Registration",
+      "subtitle": "Priority access to conferences",
+      "labels": {
+        "civility": "Civility",
+        "title": "Title / Rank",
+        "lastName": "Last Name",
+        "firstName": "First Name",
+        "email": "Professional Email",
+        "organization": "Organization",
+        "sector": "Sector of Activity",
+        "nationality": "Nationality",
+        "country": "Country of Residence",
+        "city": "City",
+        "whatsapp": "WhatsApp",
+        "photo": "ID Photo"
+      },
+      "placeholders": {
+        "select": "Select...",
+        "lastName": "YOUR LAST NAME",
+        "firstName": "YOUR FIRST NAME",
+        "organization": "NAME OF THE STRUCTURE"
+      },
+      "submit": "Complete Registration"
+    },
+    "options": {
+      "civility": {
+        "m": "Mr.",
+        "mme": "Ms./Mrs."
+      },
+      "titles": {
+        "dr": "Doctor (Dr)",
+        "prof": "Professor (Prof.)",
+        "amb": "Ambassador (H.E.)",
+        "ing": "Engineer",
+        "min": "Minister (Hon.)"
+      },
+      "sectors": {
+        "gouvernement": "Government",
+        "diplomatie": "Diplomacy & Cooperation",
+        "administration": "Administration",
+        "developpement": "Development",
+        "industrie": "Industry",
+        "mines": "Mining",
+        "commerce": "Commerce",
+        "it": "IT/Digital",
+        "communication": "Communication",
+        "agribusiness": "Agribusiness/Agriculture",
+        "conseil": "Consultancy",
+        "environnement": "Environment & Sustainable Development",
+        "presse": "Press & Media",
+        "autre": "Other"
+      },
+      "countries": {
+        "gabon": "GABON",
+        "cotedivoire": "IVORY COAST",
+        "senegal": "SENEGAL",
+        "cameroun": "CAMEROON",
+        "france": "FRANCE"
+      }
+    }
+  },
+  "Actualites": {
+  "header": {
+    "badge": "Forum News",
+    "titre1": "Latest News",
+    "titre2": "from the Forum",
+    "sousTitre": "Here you will find official announcements, press releases, interviews, and information regarding the preparations for the Libreville International Forum."
+  },
+  "categories": {
+    "communique": "Press Releases",
+    "economie": "Economy",
+    "technologie": "Technology",
+    "gouvernance": "Governance",
+    "invest": "Investments"
+  },
+  "articles": {
+    "ia": {
+      "title": "AI Transforms Public Services in Gabon",
+      "excerpt": "A comprehensive analysis of the integration of digital solutions within the administration..."
+    },
+    "energie": {
+      "title": "Green Energy Memorandum of Understanding Signed",
+      "excerpt": "International investors are positioning themselves in the sustainable energy sector..."
+    }
+  },
+  "sidebar": {
+    "search": "Search",
+    "placeholder": "Keywords...",
+    "categories": "Categories",
+    "reset": "Reset filters",
+    "no_categories": "No categories available"
+  },
+"status": {
+    "loading": "Loading...",
+    "no_results": "No results found."
+  },
+  "pagination": {
+    "total": "Total : {count} posts"
+  }
+  },
+  "Thematique": {
+    "header": {
+      "badge": "Vision - Strategy",
+      "titre1": "The Forum",
+      "titre2": "Theme",
+      "sousTitre": "Discover the guiding principle of this 2026 edition. An in-depth analysis of growth levers and structural challenges to build a strong economy."
+    },
+    "details": {
+      "badge": "2026 Theme",
+      "title": "Democracy, Business Climate & Artificial Intelligence",
+      "description": "The 2026 theme is part of a key moment for Gabon, which is committed to <bold>institutional and economic reforms</bold> designed to strengthen stability, transparency, and confidence.<br /><br />International experiences show that the quality of governance and the predictability of institutions are decisive factors in attracting investment.<br /><br />By linking <bold>democracy, the business climate, and technological innovation</bold>, the Forum highlights the levers capable of durably transforming African economies and restoring long-term trust with international partners."
+    }
+  },
+  "Philosophie": {
+    "header": {
+      "badge": "Our Vision",
+      "titre1": "The Forum's",
+      "titre2": "Ambition",
+      "sousTitre": "Reconciling democratic stability and economic performance to build Gabon's future."
+    },
+    "content": {
+      "title": "The Libreville International Forum",
+      "text": "The Libreville International Forum is part of the vision carried by <bold>His Excellency Brice Clotaire Oligui Nguema</bold>..."
+    }
+  },
+  "MotCommissaire": {
+  "header": {
+    "badge": "A word from",
+    "titre1": "The Commissioner",
+    "titre2": "General",
+    "sousTitre": "Welcome message and strategic vision."
+  },
+  "content": {
+    "title": "Dear Participants,",
+    "badge": "Perspectives 2026",
+    "text": "Welcome to the Libreville Forum... <bold>the development of Africa</bold>."
+  }
+  },
+  "Equipe": {
+    "header": {
+      "badge": "Human Capital",
+      "titre1": "The Forum",
+      "titre2": "Team",
+      "sousTitre": "A synergy of experts and decision-makers committed to the success of the event."
+    },
+    "content": {
+      "title": "Synergy & Expertise",
+      "description": "The Libreville Forum is driven by a multidisciplinary team combining strategic expertise, advanced logistics, and diplomatic vision.",
+      "loading": "Loading team members..."
+    }
+  },
+  "Partenaires": {
+    "header": {
+      "badge": "Partners",
+      "titre1": "Forum",
+      "titre2": "Partners",
+      "sousTitre": "A synergy of passionate experts and decision-makers, united by the will to promote Gabonese expertise."
+    },
+    "presentation": {
+      "badge": "Our Partners Presentation",
+      "title": "Strategic Partners",
+      "description": "The Forum relies on a network of institutional, economic, and technical partners committed to the continent's transformation.<br /><br />Their contribution strengthens the quality of exchanges. <bold>Over 50 institutions are committed.</bold>"
+    },
+    "grid": {
+      "title": "Our Strategic",
+      "titleAccent": "Partners",
+      "description": "A strategic alliance between public vision and private agility."
+    }
+  },
+  "Palais": {
+    "header": {
+      "badge": "Libreville - Gabon",
+      "titre1": "Omar Bongo Ondimba",
+      "titre2": "Convention Center",
+      "sousTitre": "Inaugurated in 2026, on the occasion of the International Forum of Libreville."
+    },
+    "presentation": {
+      "badge": "Prestige Venue",
+      "title": "The Omar Bongo Ondimba Convention Center",
+      "description": "Inaugurated in 2026 (over 3000 seats), the <bold>Omar Bongo Ondimba Convention Center</bold> stands as a modern infrastructure.<br /><br />Built in the heart of the Cité de la Démocratie, it reflects the vision of <bold>H.E. Brice Clotaire Oligui Nguema</bold>."
+    },
+    "gallery": {
+      "badge": "Preview",
+      "title": "Excellence in Pictures"
+    }
+  },
+  "Ministere": {
+    "header": {
+      "badge": "Institutional Oversight",
+      "titre1": "",
+      "titre2": "Stakeholders",
+      "sousTitre": "The institutional and strategic foundation of the Forum."
+    },
+    "content": {
+      "badge": "Government",
+      "title": "Governmental Action",
+      "text": "The Ministry of Foreign Affairs and the Ministry of Economy join forces to promote investment and Gabon's international influence."
+    }
+}
+}

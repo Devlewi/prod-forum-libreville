@@ -1,0 +1,40 @@
+.spinner-overlay {
+    /* Couverture totale */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Utilisation de 100% pour la compatibilité mobile */
+    
+    /* Centrage absolu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Look & Feel */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    --c: no-repeat linear-gradient(#2e76bc 0 0);
+    background: var(--c), var(--c), var(--c), var(--c);
+    background-size: 21px 21px;
+    
+    /* L'animation l5 */
+    animation: l5 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+    
+    /* Optionnel : assure que l'élément reste bien au centre même s'il change de taille */
+    margin: auto; 
+}
+
+@keyframes l5 {
+    0%   { background-position: 0 0, 100% 0, 100% 100%, 0 100% }
+    /* À 33% et 66%, l'élément grandit, Flexbox recalculera le centrage instantanément */
+    33%  { background-position: 0 0, 100% 0, 100% 100%, 0 100%; width: 60px; height: 60px }
+    66%  { background-position: 100% 0, 100% 100%, 0 100%, 0 0; width: 60px; height: 60px }
+    100% { background-position: 100% 0, 100% 100%, 0 100%, 0 0 }
+}

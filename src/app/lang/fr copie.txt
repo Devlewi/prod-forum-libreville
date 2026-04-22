@@ -1,0 +1,154 @@
+{
+  "news" :"Actualites",
+  "openmsg":"Ouvrir",
+  "section2title":"NOTRE UNIVERS",
+  "section4title":"CHC EN BREF",
+  "section5title":"PARTENAIRES",
+  "msgnewsletter": "Abonnez-vous pour recevoir les dernières actualités de CHC",
+  "placeholdernewsletter": "Votre adresse e-mail",
+  "meta": {
+      "title": "CHC | ACCUEIL",
+      "description": "HOTEL"
+    },
+  "menu": {
+    "accueil": "Accueil",
+    "societe": "Société",
+    "portefeuille": "Portefeuille",
+    "metiers": "Métiers",
+    "projets": "Projets",
+    "actualites": "Actualités",
+    "developpement_durable": "Développement Durable",
+    "carierres": "Carrières",
+    "publications": "Publications",    
+    "contact": "Nous Contacter"
+  },
+  "slug": {
+    "societe": {
+      "title": "Société",
+      "slug": "#",
+      "subItems": [
+        { "title": "Mission", "slug": "mission" },
+        { "title": "Vision", "slug": "vision" },
+        { "title": "Actionnaires", "slug": "actionnaires" },
+        { "title": "Organisation", "slug": "organisation" }
+      ]
+    },
+    "portefeuille": {
+      "title": "Portefeuille",
+      "slug": "#",
+      "subItems": [
+        { "title": "Hôtel HILTON", "slug": "hotel-hilton" },
+        { "title": "Centre commercial du complexe CHC", "slug": "centre-commercial-du-complexe-chc" }
+      ]
+    },
+    "metiers": {
+      "title": "Métiers",
+      "slug": "metiers",
+      "subItems": [
+        { "title": "Gestion d’établissements de tourisme et loisirs", "slug": "gestion-detablissements-de-tourisme-et-loisirs" },
+        { "title": "Études et Recherche", "slug": "etudes-et-recherche" }
+      ]
+    },
+    "projets": {
+      "title": "Projets",
+      "slug": "#",
+      "subItems": [
+        { "title": "Rénovation du Hilton Hotel de Yaoundé", "slug": "renovation-du-hilton-hotel-de-yaounde" },
+        { "title": "Transformation du Centre Commercial", "slug": "transformation-du-centre-commercial" },
+        { "title": "Construction Hôtel 5 Étoiles Kribi", "slug": "construction-hotel-5-etoiles-kribi" },
+        { "title": "Entrée en Bourse", "slug": "entree-en-bourse" }
+      ]
+    },
+    "actualites": {
+      "title": "Actualités",
+      "slug": "#",
+      "subItems": [
+        { "title": "Évènements", "slug": "evenements" },
+        { "title": "Vie sociale", "slug": "vie-sociale" }
+      ]
+    },
+    "developpement_durable": {
+      "title": "Développement Durable",
+      "slug": "developpement-durable",
+      "subItems": []
+    },
+    "carierres": {
+      "title": "Carrières",
+      "slug": "#",
+      "subItems": [
+        { "title": "Offres d’emploi", "slug": "offres-demploi" },
+        { "title": "Offres de stage", "slug": "offres-de-stage" },
+        { "title": "Candidature spontanée", "slug": "candidature-spontanee" }
+      ]
+    },
+    "publications": {
+      "title": "Publications",
+      "slug": "#",
+      "subItems": [
+        { "title": "Avis d’appel d’offre", "slug": "avis-dappel-doffre" },
+        { "title": "Etats financiers", "slug": "etats-financiers" },
+        { "title": "ARMP", "slug": "https://www.armp.cm/" },
+        { "title": "HILTON", "slug": "https://www.hilton.com/" },
+        { "title": "SNI", "slug": "https://www.minmidt.cm/la-societe-nationale-dinvestissement-sni/" },
+        { "title": "Autres", "slug": "autres" }
+      ]
+    },
+    "contact": {
+      "title": "Nous Contacter",
+      "slug": "contact"
+    }
+  },
+  "endpoint":{
+    "event":"evenements"
+  },
+  "others":{
+    "name":"Nom",
+    "subject":"Sujet",
+    "sendmsg":"Envoyer le message",
+    "sending":"Envoi...",
+    "publiele":"Publié le",
+    "prev":"Préc",
+    "next":"Suiv",
+    "onpage":"sur",
+    "title": "CHC - Résultats de recherche",
+    "description": "Explorez les contenus liés à votre recherche sur CHC",
+    "btnmore":"En savoir plus",
+    "btnmoreother":"En savoir plus",
+    "btnoffermore":"Voir l'offre",
+    "imagenotfound":"Image non disponible",
+    "loadingmsg":"Chargement en cours",
+    "entersmth":"Veuillez saisir un mot-clé.",
+    "noneresult":"Aucun résultat trouvé.",
+    "foundresult":"résultats trouvés",
+    "resultfor":"Résultats pour",
+    "nonekeyword":"Aucun mot-clé fourni",
+    "searchmsg":"Recherche...",
+    "on":"sur",
+    "mentionlegaltxt": "Mentions legales",
+    "mentionlegalslug": "mentions-legales",
+    "dataprotectiontxt": "Protection des données personnelles",
+    "dataprotectionslug": "protection-des-donnees-personnelles",
+    "cookietxt": "Gestion des cookies",
+    "cookieslug": "gestion-des-cookies",
+    "privacytxt": "Centre de confidentialité",
+    "privacyslug": "centre-de-confidentialite",
+    "events": "Evénéments",
+    "sociallife": "Vie sociale",
+    "offreemp": "Offres d’emploi",
+    "offretage": "Offres de stage",
+    "avisapploffre": "Avis d’appel d’offre",
+    "otherpost": "Autres",
+    "financialstatement": "Etats financiers"
+  },
+  "form": {
+  "postuler": "Postuler à cette offre",
+  "intitulePoste": "Intitulé du poste",
+  "nomComplet": "Nom complet",
+  "email": "Adresse email",
+  "telephone": "Téléphone",
+  "message": "Message ou motivation",
+  "envoyer": "Envoyer ma candidature",
+  "spontaneemsfcv":"Joindre votre CV (PDF, Word) :" 
+}
+
+}

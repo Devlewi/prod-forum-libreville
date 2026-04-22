@@ -1,0 +1,76 @@
+https://github.com/Devlewi/eeadci-template-formation/
+
+
+A EXPLOITER
+https://preview.themeforest.net/item/autovault-car-dealer-and-automotive-html5-template/full_screen_preview/56583165?_ga=2.35704611.206356330.1741673621-1121595170.1741673621
+
+
+https://mega.nz/fm/7J8DBJbI
+https://www.youtube.com/watch?v=6Lp3JR5nkg4
+
+-test
+
+
+
+
+
+========= =========
+https://dev251.kodesolution.com/hoteler/
+https://duruthemes.com/demo/html/rixos/light/index.html
+https://www.francophonie.org/
+https://parador-landing.wpocean.com/?storefront=envato-elements
+https://dev251.kodesolution.com/hoteler/
+https://preview.themeforest.net/item/moonlit-hotel-booking-wordpress-theme/full_screen_preview/57289887?_ga=2.87088669.445276395.1743597761-2040380744.1725386260&_gac=1.254852730.1741763459.Cj0KCQjw4cS-BhDGARIsABg4_J184ddmYZU-443t6ErwvZe0DvSFiq0QGG59hR27EbvjvNLj0giUWRkaAkb2EALw_wcB
+https://hotel-x.myshopify.com/
+https://reactheme.com/products/wordpress/moonlit/beach/
+https://reactheme.com/products/wordpress/moonlit/oceanbreeze/
+https://reactheme.com/products/wordpress/moonlit/beach/
+
+
+
+webdesign
+https://www.youtube.com/watch?v=Tyt2Sq1UMAY
+
+outils de veille
+https://www.statista.com/statistics/1124699/worldwide-developer-survey-most-used-frameworks-web/
+
+
+LIENS UTILES
+https://swiperjs.com/demos
+https://www.youtube.com/watch?v=SjOPFwp1EpI
+https://uiinitiative.com/catalog/carousel-slider
+
+JS Carrousel 3D Infini avec Effet de Rotation Continu
+
+
+
+
+
+https://www.youtube.com/watch?v=THgvKhXemRw
+https://www.youtube.com/watch?v=9CqpFPGfuJ4
+https://www.youtube.com/watch?v=TGyeae7exto
+https://www.youtube.com/watch?v=6dkDepLX0rk
+
+
+
+
+
+
+
+
+
+<======== A REGARDER - ECOUTER ========>
+* https://www.youtube.com/watch?v=G-5NHXtwgfY
+* https://www.youtube.com/watch?v=sOiYET24330
+
+
+
+
+Arial black-> titre 
+les petits titre = Times New Roman
+
+
+
+
+========== POUR JUSTIFIER AVEC TAILWIND CSS ==========
+hyphens-auto text-justify [text-justify:inner-character]

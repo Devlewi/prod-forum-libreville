@@ -1,0 +1,87 @@
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+export default function Home() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("https://tplvictoire.coach-lewi.com/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    if (data.token) {
+      // Stocker le token dans le localStorage avant de rediriger
+      localStorage.setItem("token", data.token);
+
+      // Affichage du message de succès
+      setSuccessMessage("Connexion réussie ! Bienvenue, " + data.name);
+
+      // Redirection vers la page des prédictions après un délai
+      setTimeout(() => {
+        router.push("/predications"); // Redirection vers la page des prédictions
+      }, 1500);
+    } else {
+      // Affichage du message d'erreur
+      setError("Erreur : " + data.message || "Echec de la connexion. Veuillez réessayer.");
+    }
+  };
+
+  return (
+    <div className="min-h-[500px] bg-gray-100 flex items-center justify-center">
+      <div className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Authentification</h2>
+
+        {/* Affichage du message de succès */}
+        {successMessage && <div className="bg-green-500 text-white p-2 rounded mb-4">{successMessage}</div>}
+
+        {/* Affichage du message d'erreur */}
+        {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
+
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700">Email</label>
+            <input
+              type="email"
+              id="email"
+              className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg"
+              placeholder="Votre email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="password" className="block text-gray-700">Mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg"
+              placeholder="Votre mot de passe"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 mt-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600"
+          >
+            Se connecter
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}

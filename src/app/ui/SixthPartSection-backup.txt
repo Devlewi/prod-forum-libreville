@@ -1,0 +1,136 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import React, { useRef } from "react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react"; 
+
+interface SectionSixProps {
+  sectionsix: {
+    titre: string;
+    sous_titre: string;
+    logos: string[];
+  };
+  lang: "fr" | "en";
+}
+
+const SixthPartSection = ({ sectionsix, lang }: SectionSixProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  if (!sectionsix) return null;
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft } = scrollRef.current;
+      // On définit une distance de scroll (largeur d'un logo + gap)
+      const scrollAmount = 300; 
+      
+      scrollRef.current.scrollTo({
+        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const t = {
+    fr: {
+      becomePartner: "Devenir partenaire de l'édition 2026",
+      partnerPath: "/fr/contact",
+    },
+    en: {
+      becomePartner: "Become a partner for the 2026 edition",
+      partnerPath: "/en/contact",
+    },
+  };
+
+  const currentT = t[lang] || t.fr;
+
+  return (
+    <section className="py-20 bg-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-12">
+        <div className="text-center flex flex-col items-center justify-center w-full">
+          <span className="text-[#009e60] text-xs uppercase font-extrabold block mb-2 tracking-widest">
+            {sectionsix.titre}
+          </span>
+          <h2 className="text-2xl md:text-3xl text-blue-950 uppercase font-extrabold leading-tight">
+            {sectionsix.sous_titre}
+          </h2>
+          <div className="w-12 h-1 bg-[#C5A059] mt-4 rounded-full" />
+        </div>
+      </div>
+
+      {/* CONTENEUR DU SLIDER */}
+      <div className="relative w-full">
+        {/* Gradients latéraux */}
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+
+        <div
+          ref={scrollRef}
+          className="flex gap-6 md:gap-10 overflow-x-auto pb-4 pt-4 px-10 
+                     scrollbar-hide snap-x snap-mandatory select-none"
+          style={{ 
+            scrollBehavior: 'smooth',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
+        >
+          {sectionsix.logos?.map((logoUrl, index) => (
+            <div key={index} className="flex-none snap-center">
+              <div className="w-[200px] md:w-[260px] h-[120px] md:h-[160px] 
+                            bg-white rounded-xl shadow-sm border border-slate-100 
+                            flex items-center justify-center p-6
+                            transition-all duration-300 hover:shadow-md">
+                <img
+                  src={logoUrl}
+                  alt={`Partner logo ${index + 1}`}
+                  className="max-w-full max-h-full object-contain  hover:grayscale-0 transition-all duration-500"
+                  draggable="false"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* BOUTONS DE NAVIGATION (Sous les logos) */}
+        <div className="flex justify-center items-center gap-6 mt-8">
+          <button
+            onClick={() => scroll("left")}
+            className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-slate-200 text-blue-950 hover:border-[#009e60] hover:text-[#009e60] transition-all bg-white shadow-sm"
+            aria-label="Précédent"
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          <div className="h-1 w-12 bg-slate-200 rounded-full">
+            <div className="h-full w-1/2 bg-[#C5A059] rounded-full animate-pulse" />
+          </div>
+
+          <button
+            onClick={() => scroll("right")}
+            className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-slate-200 text-blue-950 hover:border-[#009e60] hover:text-[#009e60] transition-all bg-white shadow-sm"
+            aria-label="Suivant"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+      </div>
+
+      {/* CTA SECTION */}
+      <div className="mt-16 text-center">
+        <Link
+          href={currentT.partnerPath}
+          className="inline-flex items-center gap-4 group"
+        >
+          <span className="text-[10px] uppercase font-extrabold text-slate-400 group-hover:text-[#009e60] transition-colors">
+            {currentT.becomePartner}
+          </span>
+          <span className="h-[1px] w-12 bg-slate-200 group-hover:w-20 group-hover:bg-[#009e60] transition-all" />
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default SixthPartSection;

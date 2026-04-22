@@ -1,0 +1,171 @@
+{
+  "news" :"News",
+  "openmsg":"Open",
+  "section2title":"OUR UNIVERSE",
+  "section4title":"CHC IN BRIEF",
+  "section5title":"PARTNERS",
+  "msgnewsletter": "Subscribe to receive the latest CHC news",
+  "placeholdernewsletter": "Your e-mail address",
+   "meta": {
+      "title": "CHC | HOME",
+      "description": "HOTEL"
+    },
+  "menu": {
+    "accueil": "Home",
+    "societe": "Company",
+    "portefeuille": "Portfolio",
+    "metiers": "Services",
+    "projets": "Projects",
+    "actualites": "News",
+    "developpement_durable": "Sustainable Development",
+    "carierres": "Careers",
+    "publications": "Publications",
+    "contact": "Contact Us"
+  },
+  "slug": {
+    "societe": {
+      "title": "Company",
+      "slug": "#",
+      "subItems": [
+        { "title": "Mission", "slug": "mission-en" },
+        { "title": "Vision", "slug": "vision-en" },
+        { "title": "Shareholders", "slug": "shareholders" },
+        { "title": "Organization", "slug": "organization" }
+      ]
+    },
+    "portefeuille": {
+      "title": "Portfolio",
+      "slug": "portefeuille",
+      "subItems": [
+        { "title": "Hilton Hotel", "slug": "hilton-hotel" },
+        {
+          "title": "CHC complex shopping mall",
+          "slug": "chc-complex-shopping-mall"
+        }
+      ]
+    },
+    "metiers": {
+      "title": "Services",
+      "slug": "metiers",
+      "subItems": [
+        {
+          "title": "Management of tourism and leisure establishments",
+          "slug": "management-of-tourism-and-leisure-establishments"
+        },
+        { "title": "Studies and Research", "slug": "studies-and-research" }
+      ]
+    },
+    "projets": {
+      "title": "Projects",
+      "slug": "projets",
+      "subItems": [
+        {
+          "title": "Renovation of Hilton Hotel Yaoundé",
+          "slug": "renovation-of-hilton-hotel-yaounde"
+        },
+        {
+          "title": "Shopping mall transformation",
+          "slug": "shopping-mall-transformation"
+        },
+        {
+          "title": "Construction of 5-Star Hotel in Kribi",
+          "slug": "construction-of-5-star-hotel-in-kribi"
+        },
+        {
+          "title": "Initial Public Offering",
+          "slug": "initial-public-offering"
+        }
+      ]
+    },
+    "actualites": {
+      "title": "News",
+      "slug": "actualites",
+      "subItems": [
+        { "title": "Events", "slug": "events" },
+        { "title": "Social Life", "slug": "social-life" }
+      ]
+    },
+    "developpement_durable": {
+      "title": "Sustainable Development",
+      "slug": "sustainable-development",
+      "subItems": []
+    },
+    "carierres": {
+      "title": "Careers",
+      "slug": "carrieres",
+      "subItems": [
+        { "title": "Job Offers", "slug": "job-offers" },
+        { "title": "Internships", "slug": "internships" },
+        { "title": "Spontaneous Application", "slug": "spontaneous-application" }
+      ]
+    },
+    "publications": {
+      "title": "Publications",
+      "slug": "publications",
+      "subItems": [
+        { "title": "Call for Tenders", "slug": "call-for-tenders" },
+        { "title": "Financial statements", "slug": "financial-statements" },
+        { "title": "ARMP", "slug": "https://www.armp.cm/" },
+        { "title": "HILTON", "slug": "https://www.hilton.com/" },
+        { "title": "SNI", "slug": "https://www.minmidt.cm/la-societe-nationale-dinvestissement-sni/" },
+        { "title": "Others", "slug": "others" }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "slug": "contact"
+    }
+  },
+  "endpoint": {
+    "event": "events"
+  },
+  "others": {
+    "name":"Name",
+    "subject":"Subject",
+    "sendmsg":"Send the message",
+    "sending":"Sending...",
+    "publiele": "Posted on",
+    "prev": "Prev",
+    "next": "Next",
+    "onpage": "on",
+    "title": "CHC - Search Results",
+    "description": "Browse content related to your search on CHC",
+    "btnmore": "Read more",
+    "btnmoreother":"Read more",
+    "btnoffermore": "See offer",
+    "imagenotfound":"Image not available",
+    "loadingmsg":"Loading in progress",
+    "entersmth":"Please enter a keyword.",
+    "noneresult":"No results found.",
+    "foundresult":"results found",
+    "resultfor":"Results for",
+    "nonekeyword":"No keywords supplied",
+    "searchmsg":"Search for...",
+    "on":"on",
+    "mentionlegaltxt": "Legal notices",
+    "mentionlegalslug": "legal-notices",
+    "dataprotectiontxt": "Personal data protection",
+    "dataprotectionslug": "personal-data-protection",  
+    "cookietxt": "Cookie management",
+    "cookieslug": "cookie-management",
+    "privacytxt": "Privacy Center",
+    "privacyslug": "privacy-center",
+    "events": "Events",
+    "sociallife": "Social life",
+    "offreemp": "Job offers",
+    "offretage": "Internships",
+    "avisapploffre": "Call for Tenders",
+    "otherpost": "Others",
+    "financialstatement": "Financial statements"
+  },
+  "form": {
+    "postuler": "Apply to this offer",
+    "intitulePoste": "Job title",
+    "nomComplet": "Full name",
+    "email": "Email address",
+    "telephone": "Phone",
+    "message": "Message or motivation",
+    "envoyer": "Send my application",
+    "spontaneemsfcv":"Attach your CV (PDF, Word) :"
+  }
+}
