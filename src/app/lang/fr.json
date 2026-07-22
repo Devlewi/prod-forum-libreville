@@ -13,12 +13,14 @@
       "ministere": "Parties prenantes",
       "equipe": "L’Équipe",
       "partenaires": "Les partenaires",
-      "palais": "Le Palais des Congrès"
+      "palais": "Le Palais des Congrès"     
     },
     "sub_forum": {
-      "thematique": "La thématique",
+      "thematique": "La thématique",       
       "programme": "Le programme",
-      "intervenants": "Les intervenants"
+      "intervenants": "Les intervenants",
+      "brochure": "La brochure du Forum",
+      "declaration": "la Déclaration de Libreville"
     }
   },
   "Footer": {
@@ -192,11 +194,16 @@
         "mme": "Madame (Mme)"
       },
       "titles": {
+        "pdg": "PDG",
+        "dg": "Directeur Général (DG)",
+        "ceo": "CEO",
         "dr": "Docteur (Dr)",
         "prof": "Professeur (Prof.)",
         "amb": "Ambassadeur (S.E.)",
         "ing": "Ingénieur",
-        "min": "Ministre"
+        "min": "Ministre",
+        "parle": "Parlementaire",
+        "autre": "Autre"
       },
       "sectors": {
         "gouvernement": "Gouvernement",
@@ -221,6 +228,14 @@
         "cameroun": "CAMEROUN",
         "france": "FRANCE"
       }
+    },
+    "closed": {
+      "title": "Inscriptions Clôturées",
+      "subtitle": "Quota de participants atteint",
+      "mainText": "Les inscriptions au Forum International de Libreville sont désormais clôturées. Le quota maximum de participants a été atteint.",
+      "secondaryText": "Vous pourrez suivre l’intégralité du Forum en direct sur nos réseaux sociaux officiels, ainsi que sur les médias publics gabonais.",
+      "footerText": "Merci pour votre intérêt et votre mobilisation autour de cette première édition du Forum International de Libreville pour l’Innovation et le Développement.",
+      "socialLabel": "Suivez l'événement en direct"
     }
   },
   "Actualites": {

@@ -12,6 +12,7 @@ export default function Inscription({ locale }: { locale: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [apiData, setApiData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const isRegistrationOpen = false;
 
   // --- CHARGEMENT DES DONNÉES DEPUIS WORDPRESS ---
   useEffect(() => {
@@ -172,6 +173,8 @@ export default function Inscription({ locale }: { locale: string }) {
             </div>
 
             {/* Colonne Droite : Formulaire */}
+            
+            {isRegistrationOpen ? (<>
             <div className="lg:col-span-7 relative lg:mt-[-10px] mt-[-30px]">
               <div className="relative bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(10,31,68,0.12)] border border-slate-100">
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -204,27 +207,33 @@ export default function Inscription({ locale }: { locale: string }) {
                       </label>
                       <div className="relative">
                         <i className="fa-solid fa-medal absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#C5A059] transition-colors" />
-                        <select
-                          name="rang"
-                          className="w-full font-sans pl-10 pr-10 py-4 bg-gray-50 border border-slate-100 rounded-xl text-xs font-bold text-slate-600 outline-none focus:ring-4 focus:ring-[#0A1F44]/5 focus:border-[#0A1F44] appearance-none cursor-pointer transition-all"
-                          defaultValue=""
-                        >
-                          <option value="" disabled>
-                            {t("form.labels.title")}
-                          </option>                          
+                       <select
+  name="rang"
+  className="w-full font-sans pl-10 pr-10 py-4 bg-gray-50 border border-slate-100 rounded-xl text-xs font-bold text-slate-600 outline-none focus:ring-4 focus:ring-[#0A1F44]/5 focus:border-[#0A1F44] appearance-none cursor-pointer transition-all"
+  defaultValue=""
+>
+  <option value="" disabled>
+    {t("form.labels.title")}
+  </option>
 
-                          <option value="Amb">{t("options.titles.amb")}</option>
-
-                          <option value="Min">{t("options.titles.min")}</option>
-
-                          <option value="Prof">
-                            {t("options.titles.prof")}
-                          </option>
-
-                          <option value="Dr">{t("options.titles.dr")}</option>
-
-                          <option value="Ing">{t("options.titles.ing")}</option>
-                        </select>
+  {/* Génération dynamique des options basées sur tes clés JSON */}
+  {[
+    "pdg",
+    "dg",
+    "ceo",
+    "amb",
+    "min",
+    "prof",
+    "dr",
+    "ing",
+    "parle",
+    "autre"
+  ].map((key) => (
+    <option key={key} value={key.toUpperCase()}>
+      {t(`options.titles.${key}`)}
+    </option>
+  ))}
+</select>
                         <i className="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 pointer-events-none text-[10px]" />
                       </div>
                     </div>
@@ -443,6 +452,48 @@ export default function Inscription({ locale }: { locale: string }) {
                 </form>
               </div>
             </div>
+            </>):(<>
+            <div className="lg:col-span-7 relative">
+  <div
+    id="inscription"
+    className="bg-blue-950/80 backdrop-blur-2xl border border-blue-500/20 p-6 md:p-8 lg:p-12 rounded-[2.5rem] shadow-2xl relative z-10 text-center"
+  >
+    <div className="mb-6 inline-flex items-center justify-center w-16 h-16 bg-[#C5A059]/20 rounded-full border border-[#C5A059]/40">
+      <i className="fa-solid fa-circle-info text-[#C5A059] text-2xl animate-pulse"></i>
+    </div>
+
+    <h2 className="text-xl md:text-2xl font-extrabold text-white uppercase leading-tight mb-2">
+      {t("closed.title")}
+    </h2>
+
+    <p className="text-slate-400 text-[10px] font-extrabold uppercase tracking-widest mb-6">
+      {/*t("closed.subtitle")*/}
+    </p>
+
+    <div className="space-y-4">
+      <p className="text-slate-200 text-sm md:text-base leading-relaxed font-medium">
+        {t("closed.mainText")}
+      </p>
+
+      <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+        {t("closed.secondaryText")}
+      </p>
+
+      <div className="py-4">
+        <div className="h-[1px] w-12 bg-[#009e60] mx-auto mb-4"></div>
+        <p className="text-white font-bold text-xs md:text-sm italic">
+          {t("closed.footerText")}
+        </p>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+            </>
+          
+          )}
+
           </div>
         </div>
       </section>

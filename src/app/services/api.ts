@@ -741,34 +741,50 @@ export async function fetchPartenairesData(locale: string) {
     const page = pages[0];
     const acf = page.acf;
 
-    // --- LOGIQUE DE RÉCUPÉRATION DES LOGOS ---
-    const logosRaw = acf?.sections_logos_partenaires?.section_logos || [];
-
-    // On transforme les IDs en URLs de manière asynchrone et parallèle
-    const logosWithUrls = await Promise.all(
-      logosRaw.map(async (item: any) => {
-        let imageUrl = "";
-        const logoData = item.logo_entreprise;
-
-        if (typeof logoData === "number") {
-          // C'est un ID, on va chercher l'URL du média
-          try {
-            const mediaRes = await fetch(`${BASE_URL}/wp-json/wp/v2/media/${logoData}`);
-            const media = await mediaRes.json();
-            imageUrl = media.source_url;
-          } catch (e) {
-            console.error("Erreur media fetch:", e);
-          }
-        } else if (typeof logoData === "string") {
-          // C'est déjà une URL
-          imageUrl = logoData;
+    // --- FONCTION UTILITAIRE POUR RÉCUPÉRER L'URL D'UN LOGO ---
+    const getImageUrl = async (logoData: any) => {
+      if (typeof logoData === "number") {
+        try {
+          const mediaRes = await fetch(`${BASE_URL}/wp-json/wp/v2/media/${logoData}`);
+          const media = await mediaRes.json();
+          return media.source_url;
+        } catch (e) {
+          console.error("Erreur media fetch:", e);
         }
+      } else if (typeof logoData === "string") {
+        return logoData;
+      }
+      return "/images/placeholder-logo.png";
+    };
 
-        return {
-          src: imageUrl || "/images/placeholder-logo.png",
-          alt: item.nom_entreprise || "Partenaire"
-        };
-      })
+    // --- 1. LOGOS STRATÉGIQUES ---
+    const logosRaw = acf?.sections_logos_partenaires?.section_logos || [];
+    const logosWithUrls = await Promise.all(
+      logosRaw.map(async (item: any) => ({
+        src: await getImageUrl(item.logo_entreprise),
+        alt: item.nom_entreprise || "Partenaire",
+        url: item.url_entreprise || "#" // Optionnel si présent
+      }))
+    );
+
+    // --- 2. SECTION HÉBERGEMENT (NOUVEAU) ---
+    const hebergementRaw = acf?.sections_hebergement?.section_logos || [];
+    const hebergementWithUrls = await Promise.all(
+      hebergementRaw.map(async (item: any) => ({
+        src: await getImageUrl(item.logo_entreprise),
+        alt: "Hôtel Partenaire",
+        url: item.url_entreprise || "#" // C'est ici que l'on récupère le lien Radisson/Crystal
+      }))
+    );
+
+    // --- 3. SECTION SPONSORS (NOUVEAU) ---
+    const sponsorsRaw = acf?.sections_sponsors?.section_logos || [];
+    const sponsorsWithUrls = await Promise.all(
+      sponsorsRaw.map(async (item: any) => ({
+        src: await getImageUrl(item.logo_entreprise),
+        alt: "Sponsor",
+        url: item.url_entreprise || "#"
+      }))
     );
 
     return {
@@ -787,15 +803,30 @@ export async function fetchPartenairesData(locale: string) {
       grid: {
         title: acf?.sections_logos_partenaires?.badge_header_section_titre || "",
         description: acf?.sections_logos_partenaires?.badge_header_section_sous_titre || "",
-        logos: logosWithUrls // On utilise ici notre tableau traité
+        logos: logosWithUrls
+      },
+      // --- NOUVEAUX CHAMPS HÉBERGEMENT ---
+      hebergement: {
+        badge: acf?.sections_hebergement?.badge_header_section_logo || "", // Ex: "Hébergement"
+        title: acf?.sections_hebergement?.badge_header_section_titre || "",
+        description: acf?.sections_hebergement?.badge_header_section_sous_titre || "",
+        hotels: hebergementWithUrls
+      },
+      // --- NOUVEAUX CHAMPS SPONSORS ---
+      sponsors: {
+        badge: acf?.sections_sponsors?.badge_header_section_logo || "", // Ton fameux Label
+        title: acf?.sections_sponsors?.badge_header_section_titre || "", // Ton titre "Sponsors"
+        description: acf?.sections_sponsors?.badge_header_section_sous_titre || "",
+        items: sponsorsWithUrls
       }
+
+      
     };
   } catch (error) {
     console.error("Erreur fetchPartenairesData:", error);
     return null;
   }
 }
-
 
 export async function fetchPalaisData(locale: string) {
   const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL;

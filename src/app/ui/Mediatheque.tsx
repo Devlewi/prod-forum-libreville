@@ -10,10 +10,13 @@ import { fetchMedias, MediaItem } from "../services/api";
 
 const getYouTubeThumbnail = (url: string | null) => {
   if (!url) return "/images/placeholder-video.jpg";
-  const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  
+  // Cette Regex capture l'ID après v=, embed/, youtu.be/ ou shorts/
+  const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
   const match = url.match(regExp);
-  if (match && match[2].length === 11) {
-    return `https://img.youtube.com/vi/${match[2]}/hqdefault.jpg`;
+  
+  if (match && match[1].length === 11) {
+    return `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg`;
   }
   return "/images/placeholder-video.jpg";
 };

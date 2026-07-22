@@ -5,10 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import FirstHeaderSection from "./FirstHeaderSection";
 import SecondSection from "./SecondSection";
 import ThirdPartSection from "./ThirdPartSection";
-//import FourfthPartSection from "./FourfthPartSection";
-//import FifthPartSection from "./FifthPartSection";
+import FourfthPartSection from "./FourfthPartSection";
+import FifthPartSection from "./FifthPartSection";
 import SixthPartSection from "./SixthPartSection";
 import { usePathname } from "next/navigation";
+import SeventhPartSection from "./SeventhPartSection";
+import EighthPartSection from "./EighthPartSection";
 
 
 // 1. Définition du type pour les props
@@ -25,13 +27,18 @@ const AnimatedSections = ({ data }: AnimatedSectionsProps) => {
   {/*
     <FirstHeaderSection key="first" sectionun={data.sectionun}/>,
     */}
-    {/* <FourfthPartSection key="fourfth" sectionquatre={data.sectionquatre} lang={currentLang} />,     */}
-    {/* <FifthPartSection key="fifth" sectioncinq={data.sectioncinq} lang={currentLang} />,*/}
+    
+    
   const sections: React.ReactNode[] = [            
     <FirstHeaderSection key="first" sectionun={data.sectionun} lang={currentLang} />,
     <SecondSection key="second" sectiondeux={data.sectiondeux} lang={currentLang}/>,
     <ThirdPartSection key="third" sectiontrois={data.sectiontrois}/>,        
+    <FourfthPartSection key="fourfth" sectionquatre={data.sectionquatre} lang={currentLang} />,
+    <FifthPartSection key="fifth" sectioncinq={data.sectioncinq} lang={currentLang} />,
     <SixthPartSection key="sixth" sectionsix={data.sectionsix} lang={currentLang}/>,
+    <SeventhPartSection key="seventh" sectionsept={data.sectionsept} lang={currentLang}/>,
+    <EighthPartSection key="seventh" sectionhuit={data.sectionhuit} lang={currentLang}/>,
+    
   ];
 
   useEffect(() => {

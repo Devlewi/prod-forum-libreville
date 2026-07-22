@@ -13,12 +13,14 @@
       "ministere": "Stakeholders",
       "equipe": "The Team",
       "partenaires": "Partners",
-      "palais": "Conference Center"
+      "palais": "Conference Center"      
     },
     "sub_forum": {
       "thematique": "Theme",
       "programme": "Program",
-      "intervenants": "Speakers"
+      "intervenants": "Speakers",
+      "brochure": "The Forum Brochure",
+      "declaration": "The Libreville Declaration"
     }
   },
   "Footer": {
@@ -191,12 +193,17 @@
         "mme": "Ms./Mrs."
       },
       "titles": {
-        "dr": "Doctor (Dr)",
-        "prof": "Professor (Prof.)",
-        "amb": "Ambassador (H.E.)",
-        "ing": "Engineer",
-        "min": "Minister (Hon.)"
-      },
+          "pdg": "Chairman & CEO",
+          "dg": "Managing Director (MD)",
+          "ceo": "CEO",
+          "dr": "Doctor (Dr)",
+          "prof": "Professor (Prof.)",
+          "amb": "Ambassador (H.E.)",
+          "ing": "Engineer",
+          "min": "Minister (Hon.)",
+          "parle": "Legislator",
+          "autre": "Other"
+        },
       "sectors": {
         "gouvernement": "Government",
         "diplomatie": "Diplomacy & Cooperation",
@@ -221,6 +228,14 @@
         "france": "FRANCE"
       }
     }
+    ,"closed": {
+  "title": "Registration Closed",
+  "subtitle": "Participant quota reached",
+  "mainText": "Registration for the Libreville International Forum is now closed. The maximum participant quota has been reached.",
+  "secondaryText": "You can follow the entire Forum live on our official social media channels, as well as on Gabonese public media.",
+  "footerText": "Thank you for your interest and your engagement in this first edition of the Libreville International Forum for Innovation and Development.",
+  "socialLabel": "Follow the event live"
+}
   },
   "Actualites": {
   "header": {

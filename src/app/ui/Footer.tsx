@@ -212,6 +212,10 @@ const handleSubscribe = async (e: React.FormEvent) => {
                 <i className="fa-solid fa-location-dot text-[#009e60] text-xs mt-0.5" />
                 <span>{t('Footer.contact.city')}</span>
               </li>              
+              <li className="flex items-start gap-2">
+                <i className="fa-solid fa-phone text-[#009e60] text-xs mt-0.5" />
+                <span> (+241) 77 70 51 56 <br/> (+241) 65 65 50 34</span>
+              </li>              
             </ul>
           </div>
         </div>

@@ -1,0 +1,491 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import Swal from "sweetalert2";
+import { InscriptionFormData, sendInscriptionForm } from "../services/api";
+//import { usePathname } from "next/navigation";
+import { getLocalizedLink } from "../lib/utils";
+
+// Typage des données provenant de WordPress
+interface SectionUnProps {
+  sectionun: {
+    edition: string;
+    ligne_1: string;
+    ligne_2: string;
+    ligne_3: string;
+    ligne_4: string;
+    description: string;
+    localisation: string;
+    libelle_programme: string;
+    url_programme: string;
+    libelle_plaquette: string;
+    url_plaquette: string;
+    urlvideo: string;
+  };
+  lang: string; // Ajout de la prop lang
+}
+
+const FirstHeaderSection = ({ sectionun, lang }: SectionUnProps) => {
+  const t = useTranslations("Inscription");
+  //const pathname = usePathname();
+  //const currentLocale = pathname.startsWith("/en") ? "en" : "fr";
+  //const getLink = (slug: string) => getLocalizedLink(currentLocale, slug);
+  const getLink = (slug: string) => getLocalizedLink(lang, slug);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // --- LOGIQUE D'ENVOI AVEC VALIDATION ---
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // 1. RÉCUPÉRATION DES VALEURS
+    const civilite = formData.get("civilite");
+    const nom = formData.get("nom") as string;
+    const prenom = formData.get("prenom") as string;
+    const email = formData.get("email") as string;
+    const organization = formData.get("organisation") as string;
+    const photo = formData.get("photo") as File;
+
+    // 2. CONTRÔLE DES CHAMPS (Exemple de validation personnalisée)
+    if (
+      !civilite ||
+      !nom.trim() ||
+      !prenom.trim() ||
+      !email.trim() ||
+      !organization.trim()
+    ) {
+      Swal.fire({
+        title: "Champs incomplets",
+        text: "Veuillez remplir tous les champs obligatoires avant de valider.",
+        icon: "warning",
+        confirmButtonColor: "#C5A059", // Couleur dorée pour l'avertissement
+      });
+      return; // On arrête l'exécution ici
+    }
+
+    // Validation spécifique pour l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      Swal.fire({
+        title: "Email invalide",
+        text: "Veuillez saisir une adresse email correcte.",
+        icon: "error",
+        confirmButtonColor: "#0A1F44",
+      });
+      return;
+    }
+
+    // Validation de la photo
+    if (!photo || photo.size === 0) {
+      Swal.fire({
+        title: "Photo manquante",
+        text: "La photo d'identité est obligatoire pour valider votre badge.",
+        icon: "info",
+        confirmButtonColor: "#C5A059",
+      });
+      return;
+    }
+
+    // 3. ENVOI SI TOUT EST OK
+    setIsSubmitting(true);
+
+    const data: InscriptionFormData = {
+      civilite: civilite as string,
+      rang: formData.get("rang") as string,
+      nom: nom,
+      prenom: prenom,
+      email: email,
+      organisation: organization,
+      secteur: formData.get("secteur") as string,
+      nationalite: formData.get("nationalite") as string,
+      pays: formData.get("pays") as string,
+      ville: formData.get("ville") as string,
+      whatsapp: formData.get("whatsapp") as string,
+      photo: photo,
+    };
+
+    try {
+      const result = await sendInscriptionForm(data);
+      if (result.success) {
+        Swal.fire({
+          title: "Succès !",
+          text: "Votre inscription a bien été enregistrée.",
+          icon: "success",
+          confirmButtonColor: "#009e60",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.message);
+      }
+    } catch (error: any) {
+      Swal.fire({
+        title: "Erreur Serveur",
+        text: error.message || "Impossible de traiter l'inscription.",
+        icon: "error",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Sécurité si les données ne sont pas encore chargées
+  if (!sectionun) return null;
+
+  return (
+    <>
+      <header className="hero-section relative flex items-center min-h-screen py-20 lg:py-0 overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <video
+            autoPlay={true}
+            muted={true}
+            loop={true}
+            playsInline={true}
+            className="w-full h-full object-cover opacity-50 lg:scale-105 scale-110 object-center"
+            // On peut garder le poster en statique ou le rendre dynamique si l'API le permet
+            poster={getLink('/images/slide-1-1200.webp')}
+          >
+            <source src={sectionun.urlvideo} type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture de vidéos.
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/80 lg:bg-gradient-to-br lg:from-blue-950/90 lg:via-blue-950/40 lg:to-[#0A1F44]/80"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mt-[-50px]">
+            <div className="lg:col-span-7 text-white space-y-3 text-center lg:text-left flex flex-col items-center lg:items-start">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#fff]/20 border border-[#fff]/30 rounded-full mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#009e60] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#009e60]" />
+                </span>
+                <span className="text-[white] text-[15px] font-extrabold uppercase ">
+                  {sectionun.edition}
+                </span>
+              </div>
+
+              <h1 className="text-3xl md:text-5xl lg:text-5xl text-[#009e60] font-extrabold uppercase leading-[0.9]  shadow-sm ">
+                <span className="text-[white]">{sectionun.ligne_1},</span>{" "}
+                <br />
+                <span className="">{sectionun.ligne_2}</span>
+                <span className="mt-2 text-[white]">
+                  {sectionun.ligne_3}{" "}
+                  <span className="text-[#C5A059]">{sectionun.ligne_4}</span>
+                </span>
+              </h1>
+
+              <p className="text-[16px] text-slate-300 max-w-xl font-sans  lg:mx-0 mx-auto leading-relaxed first-letter:uppercase">
+                {sectionun.description} 
+                <span
+                  className="text-[15px] font-extrabold mt-2 
+                 flex items-center gap-2 text-white opacity-80 first-letter:uppercase  
+                 justify-center md:justify-start 
+                 md:border-l-2 md:border-[#C5A059] md:pl-4 pl-0 first-letter:uppercase"
+                >
+                  <i
+                    className="fa-solid fa-location-dot text-[#C5A059] text-xs md:text-sm"
+                    aria-hidden="true"
+                  />
+                  {sectionun.localisation}
+                </span>
+              </p>
+
+             {/*
+              <div className="pt-4">
+                <Link
+                  href={getLink(sectionun.url_programme)}
+                  className="inline-block bg-white text-blue-950 border border-slate-100 px-10 py-4 rounded-lg font-extrabold uppercase text-xs  hover:bg-[#009e60] hover:text-white transition-all shadow-2xl hover:-translate-y-1"
+                >
+                  {sectionun.libelle_programme}
+                </Link>
+              </div>
+             */}
+
+              {/* Section des boutons d'action */}
+{/* Section des boutons d'action */}
+{/* Section des boutons d'action */}
+<div className="pt-6 flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start w-full">
+  
+  {/* Bouton Voir le programme */}
+  <Link
+    href={getLink(sectionun.url_programme)}
+    className="basis-1/2 flex items-center justify-center bg-white text-blue-950 border border-slate-100 px-2 py-3 md:py-4 rounded-lg font-extrabold uppercase text-[12px] md:text-[12px] hover:bg-[#009e60] hover:text-white transition-all shadow-xl hover:-translate-y-1"
+  >
+    <span className="flex flex-col sm:flex-row items-center justify-center gap-1 md:gap-2 text-center">
+      <i className="fa-solid fa-calendar-days text-[1.4em] leading-none"></i>
+      <span className="leading-tight">{sectionun.libelle_programme}</span>
+    </span>
+  </Link>
+
+  {/* Nouveau Bouton Télécharger la plaquette */}
+  <a
+    href={sectionun.url_plaquette}
+    target="_blank"
+    rel="noopener noreferrer"
+    download
+    className="basis-1/2 flex items-center justify-center bg-[#a97d2d] text-white border-2 border-[#a97d2d] px-2 py-3 md:py-4 rounded-lg font-extrabold uppercase text-[12px] md:text-[12px] transition-all shadow-xl hover:bg-[#775414] hover:border-[#775414] hover:-translate-y-1 active:scale-95"
+  >
+    <span className="flex flex-col sm:flex-row items-center justify-center gap-1 md:gap-2 text-center">
+      <i className="fa-solid fa-file-arrow-down fa-bounce text-[1.4em] leading-none"></i>
+      <span className="leading-tight">{sectionun.libelle_plaquette}</span>
+    </span>
+  </a>
+</div>
+            </div>
+
+            {/* Le reste du formulaire demeure identique puisqu'il n'est pas géré par l'API pour le moment */}
+            <div className="lg:col-span-5 relative">
+              <div
+                id="inscription"
+                className="bg-white/[0.07] backdrop-blur-2xl border border-white/10 p-4 md:p-4 lg:p-10 rounded-[2.5rem] shadow-2xl relative z-10"
+              >
+                {/* ... (Contenu du formulaire identique à ton code précédent) ... */}
+                <div className="mb-8 text-center md:text-left">
+                  <h2 className="text-2xl font-extrabold text-white uppercase  leading-none">
+                    {t("form.title")}
+                  </h2>
+                  <p className="text-slate-400 text-[10px] font-extrabold uppercase  mt-2">
+                    {t("form.subtitle")}
+                  </p>
+                </div>
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 md:space-y-5"
+                >
+                  <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4">
+                    <div className="relative group">
+                      <label className="text-[9px] font-extrabold text-slate-400 uppercase  mb-2 block">
+                        {t("form.labels.civility")}
+                      </label>
+                      <div className="relative">
+                        <i className="fa-solid fa-user-check absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#C5A059] transition-colors" />
+                        <select
+                          name="civilite"
+                          className="w-full  pl-10 pr-10 py-[0.8rem] bg-gray-50 border border-slate-100 rounded-xl text-xs font-bold text-slate-600 outline-none focus:ring-4 focus:ring-[#0A1F44]/5 focus:border-[#0A1F44] appearance-none cursor-pointer transition-all"
+                          required
+                          defaultValue=""
+                        >
+                          <option value="" disabled>
+                            {t("form.labels.civility")}
+                          </option>
+                          <option value="M.">{t("options.civility.m")}</option>
+                          <option value="Mme">{t("options.civility.mme")}</option>
+                        </select>
+                        <i className="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 pointer-events-none text-[10px]" />
+                      </div>
+                    </div>
+                    <div className="relative group">
+                      <label className="text-[9px] font-extrabold text-slate-400 uppercase  mb-2 block">
+                        {t("form.labels.title")}
+                      </label>
+                      <div className="relative">
+                        <i className="fa-solid fa-medal absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#C5A059] transition-colors" />
+                       <select
+  name="rang"
+  className="w-full pl-10 pr-10 py-[0.8rem] bg-gray-50 border border-slate-100 rounded-xl text-xs font-bold text-slate-600 outline-none focus:ring-4 focus:ring-[#0A1F44]/5 focus:border-[#0A1F44] appearance-none cursor-pointer transition-all"
+  defaultValue=""
+>
+  <option value="" disabled>
+    {t("form.labels.title")}
+  </option>
+
+  {/* Mapping des titres / rangs */}
+  {[
+    "pdg",
+    "dg",
+    "ceo",
+    "amb",
+    "min",
+    "prof",
+    "dr",
+    "ing",
+    "parle",
+    "autre"
+  ].map((key) => (
+    <option key={key} value={key.toUpperCase()}>
+      {t(`options.titles.${key}`)}
+    </option>
+  ))}
+</select>
+                        <i className="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 pointer-events-none text-[10px]" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4">
+                    <div className="relative group">
+                      <i className="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+                      <input
+                        name="nom"
+                        required
+                        type="text"
+                        placeholder={t("form.placeholders.lastName")}
+                        className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-900 uppercase"
+                      />
+                    </div>
+                    <div className="relative group">
+                      <i className="fa-solid fa-user-tag absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+                      <input
+                        name="prenom"
+                        required
+                        type="text"
+                        placeholder={t("form.placeholders.firstName")}
+                        className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-900 uppercase"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4">
+                    <div className="relative group">
+                      <i className="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+                      <input
+                        name="email"
+                        required
+                        type="email"
+                        placeholder="EX: NOM@ENTREPRISE.GA"
+                        className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-900 uppercase"
+                      />
+                    </div>
+                    <div className="relative group">
+                      <i className="fa-solid fa-building absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+                      <input
+                        name="organisation"
+                        required
+                        type="text"
+                        placeholder={t("form.placeholders.organization")}
+                        className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-900 uppercase"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4">
+                    <div className="relative group">
+                      <i className="fa-solid fa-briefcase absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+
+                      <select
+  name="secteur"
+  className="w-full pl-10 pr-10 py-[13px] bg-gray-100  border-none rounded-xl text-xs font-bold text-slate-500 outline-none focus:ring-2 focus:ring-blue-900 uppercase appearance-none cursor-pointer"
+  defaultValue=""
+>
+  <option value="" disabled>
+    {t("form.labels.sector")}
+  </option>
+
+  {/* Mapping des secteurs fournis par le client */}
+  {[
+    "gouvernement",
+    "diplomatie",
+    "administration",
+    "developpement",
+    "industrie",
+    "mines",
+    "commerce",
+    "it",
+    "communication",
+    "agribusiness",
+    "conseil",
+    "environnement",
+    "presse",
+    "autre"
+  ].map((key) => (
+    <option key={key} value={key.toUpperCase()}>
+      {t(`options.sectors.${key}`)}
+    </option>
+  ))}
+</select>
+                      <i className="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] pointer-events-none" />
+                    </div>
+                    <div className="relative group">
+                      <i className="fa-solid fa-passport absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+                      <input
+                        name="nationalite"
+                        required
+                        type="text"
+                        placeholder={t("form.labels.nationality")}
+                        className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-900 uppercase"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4">
+                    <div className="relative group">
+                      <i className="fa-solid fa-globe absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+                    <input
+                    name="pays"
+                    required
+                    type="text"
+                    placeholder={t("form.labels.country")} 
+                    className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-900 uppercase"
+                    />                       
+                    </div>
+                    <div className="relative group">
+                      <i className="fa-solid fa-city absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] group-focus-within:text-blue-900 transition-colors" />
+
+                      <input
+                        name="ville"
+                        required
+                        type="text"
+                        placeholder={t("form.labels.city")}
+                        className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-900 uppercase"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                    <div className="relative group">
+                      <label className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest mb-2 block">
+                        {t("form.labels.whatsapp")}
+                      </label>
+                      <div className="relative">
+                        <i className="fa-brands fa-whatsapp absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[12px] group-focus-within:text-[#25D366] transition-colors" />
+
+                        <input
+                          name="whatsapp"
+                          required
+                          type="tel"
+                          placeholder="EX: +241 00 00 00 00"
+                          className="w-full  pl-10 pr-4 py-3 py-[13px] bg-gray-100 border-none rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-[#25D366] uppercase"
+                        />
+                      </div>
+                    </div>
+                    <div className="relative group">
+                      <label className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest mb-2 block">
+                        {t("form.labels.photo")}
+                      </label>
+                      <div className="relative">
+                        <i className="fa-solid fa-camera absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[12px] group-focus-within:text-[#C5A059] transition-colors" />
+                        <input
+                          name="photo"
+                          required
+                          type="file"
+                          accept="image/*"
+                          className="w-full  pl-10 pr-4 py-[10px] bg-gray-100 border-none rounded-xl text-[10px] font-bold outline-none focus:ring-2 focus:ring-[#C5A059] uppercase cursor-pointer file:mr-4 file:py-1 file:px-2 file:rounded-lg file:border-0 file:text-[10px] file:font-extrabold file:bg-[#C5A059]/10 file:text-[#C5A059] hover:file:bg-[#C5A059]/20 transition-all"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#009e60] text-white  py-4 rounded-xl font-extrabold uppercase text-xs hover:bg-green-600 transition-all shadow-lg transform hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-3"
+                  >
+                    <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#006837] to-[#009e60] transition-all duration-500 group-hover:w-full"></div>
+                    <span className="relative z-10 uppercase  text-xs flex items-center justify-center gap-1">
+                      {isSubmitting ? "Traitement..." : t("form.submit")}
+                      <i
+                        className={`fa-solid ${isSubmitting ? "fa-spinner fa-spin" : "fa-paper-plane"} text-[10px] transition-transform`}
+                      />
+                    </span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
+  );
+};
+
+export default FirstHeaderSection;

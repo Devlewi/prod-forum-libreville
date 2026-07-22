@@ -21,6 +21,10 @@ interface SectionUnProps {
     localisation: string;
     libelle_programme: string;
     url_programme: string;
+    libelle_plaquette: string;
+    url_plaquette: string;
+    libelle_declaration: string;
+    url_declaration: string;
     urlvideo: string;
   };
   lang: string; // Ajout de la prop lang
@@ -34,6 +38,7 @@ const FirstHeaderSection = ({ sectionun, lang }: SectionUnProps) => {
   const getLink = (slug: string) => getLocalizedLink(lang, slug);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isRegistrationOpen = false;
 
   // --- LOGIQUE D'ENVOI AVEC VALIDATION ---
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -157,12 +162,12 @@ const FirstHeaderSection = ({ sectionun, lang }: SectionUnProps) => {
         <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mt-[-50px]">
             <div className="lg:col-span-7 text-white space-y-3 text-center lg:text-left flex flex-col items-center lg:items-start">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#009e60]/20 border border-[#009e60]/30 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#fff]/20 border border-[#fff]/30 rounded-full mb-4">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#009e60] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#009e60]" />
                 </span>
-                <span className="text-[#009e60] text-[10px] font-extrabold uppercase ">
+                <span className="text-[white] text-[15px] font-extrabold uppercase ">
                   {sectionun.edition}
                 </span>
               </div>
@@ -193,6 +198,7 @@ const FirstHeaderSection = ({ sectionun, lang }: SectionUnProps) => {
                 </span>
               </p>
 
+             {/*
               <div className="pt-4">
                 <Link
                   href={getLink(sectionun.url_programme)}
@@ -201,9 +207,60 @@ const FirstHeaderSection = ({ sectionun, lang }: SectionUnProps) => {
                   {sectionun.libelle_programme}
                 </Link>
               </div>
+             */}
+
+              {/* Section des boutons d'action */}
+{/* Section des boutons d'action */}
+{/* Section des boutons d'action */}
+<div className="pt-6 flex flex-col items-center lg:items-start w-full gap-3">
+  
+  {/* Ligne des deux premiers boutons */}
+  <div className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start w-full">
+    
+    {/* Bouton Voir le programme */}
+    <Link
+      href={getLink(sectionun.url_programme)}
+      className="basis-1/2 flex items-center justify-center bg-white text-blue-950 border border-slate-100 px-2 py-3 md:py-4 rounded-lg font-extrabold uppercase text-[12px] md:text-[12px] hover:bg-[#009e60] hover:text-white transition-all shadow-xl hover:-translate-y-1"
+    >
+      <span className="flex flex-col sm:flex-row items-center justify-center gap-1 md:gap-2 text-center">
+        <i className="fa-solid fa-calendar-days text-[1.4em] leading-none"></i>
+        <span className="leading-tight">{sectionun.libelle_programme}</span>
+      </span>
+    </Link>
+
+    {/* Bouton Télécharger la plaquette */}
+    <a
+      href={sectionun.url_plaquette}
+      target="_blank"
+      rel="noopener noreferrer"
+      download
+      className="basis-1/2 flex items-center justify-center bg-[#a97d2d] text-white border-2 border-[#a97d2d] px-2 py-3 md:py-4 rounded-lg font-extrabold uppercase text-[12px] md:text-[12px] transition-all shadow-xl hover:bg-[#775414] hover:border-[#775414] hover:-translate-y-1 active:scale-95"
+    >
+      <span className="flex flex-col sm:flex-row items-center justify-center gap-1 md:gap-2 text-center">
+        <i className="fa-solid fa-file-arrow-down fa-bounce text-[1.4em] leading-none"></i>
+        <span className="leading-tight">{sectionun.libelle_plaquette}</span>
+      </span>
+    </a>
+  </div>
+
+  {/* Nouveau Bouton : Déclaration de Libreville */}
+  <a
+    href={sectionun.url_declaration}
+    target="_blank"
+    rel="noopener noreferrer"
+    download
+    className="w-full flex items-center justify-center bg-[#04774a] text-white border-2 border-[#04774a] px-4 py-3 md:py-4 rounded-lg font-extrabold uppercase text-[12px] md:text-[12px] transition-all shadow-xl hover:bg-[#04774a] hover:-translate-y-1 active:scale-95"
+  >
+    <span className="flex items-center justify-center gap-2 text-center">
+      <i className="fa-solid fa-file-signature text-[1.4em] leading-none"></i>
+      <span className="leading-tight">{sectionun.libelle_declaration}</span>
+    </span>
+  </a>
+</div>
             </div>
 
-            {/* Le reste du formulaire demeure identique puisqu'il n'est pas géré par l'API pour le moment */}
+{isRegistrationOpen ? (<>
+{/* Le reste du formulaire demeure identique puisqu'il n'est pas géré par l'API pour le moment */}
             <div className="lg:col-span-5 relative">
               <div
                 id="inscription"
@@ -250,29 +307,33 @@ const FirstHeaderSection = ({ sectionun, lang }: SectionUnProps) => {
                       </label>
                       <div className="relative">
                         <i className="fa-solid fa-medal absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#C5A059] transition-colors" />
-                        <select
-                          name="rang"
-                          className="w-full  pl-10 pr-10 py-[0.8rem] bg-gray-50 border border-slate-100 rounded-xl text-xs font-bold text-slate-600 outline-none focus:ring-4 focus:ring-[#0A1F44]/5 focus:border-[#0A1F44] appearance-none cursor-pointer transition-all"
-                          defaultValue=""
-                        >
-                          <option value="" disabled>
-                            {t("form.labels.title")}
-                          </option>
+                       <select
+  name="rang"
+  className="w-full pl-10 pr-10 py-[0.8rem] bg-gray-50 border border-slate-100 rounded-xl text-xs font-bold text-slate-600 outline-none focus:ring-4 focus:ring-[#0A1F44]/5 focus:border-[#0A1F44] appearance-none cursor-pointer transition-all"
+  defaultValue=""
+>
+  <option value="" disabled>
+    {t("form.labels.title")}
+  </option>
 
-                          <option value="Amb">{t("options.titles.amb")}</option>
-
-                          <option value="Min">{t("options.titles.min")}</option>
-
-                          <option value="Prof">
-                            {t("options.titles.prof")}
-                          </option>
-
-                          <option value="Dr">{t("options.titles.dr")}</option>
-
-                          <option value="Ing">{t("options.titles.ing")}</option>
-
-                          
-                        </select>
+  {/* Mapping des titres / rangs */}
+  {[
+    "pdg",
+    "dg",
+    "ceo",
+    "amb",
+    "min",
+    "prof",
+    "dr",
+    "ing",
+    "parle",
+    "autre"
+  ].map((key) => (
+    <option key={key} value={key.toUpperCase()}>
+      {t(`options.titles.${key}`)}
+    </option>
+  ))}
+</select>
                         <i className="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 pointer-events-none text-[10px]" />
                       </div>
                     </div>
@@ -442,6 +503,32 @@ const FirstHeaderSection = ({ sectionun, lang }: SectionUnProps) => {
                 </form>
               </div>
             </div>
+</>):(<>
+{/* Bloc Message de Clôture */}
+  {/* Bloc Message de Clôture - Version Image */}
+<div className="lg:col-span-5 relative">
+  <div
+    id="inscription"
+    className="bg-white/[0.07] backdrop-blur-2xl border border-white/10 p-2 md:p-4 rounded-[2.5rem] shadow-2xl relative z-10 overflow-hidden"
+  >
+    <div className="relative group">
+      {/* Image fournie par le client */}
+      <img 
+        src="https://controlpanel.forumlibreville.org/wp-content/uploads/2026/05/PANEL.webp" 
+        alt={t("closed.title")}
+        className="w-full h-auto rounded-[2rem] object-cover shadow-lg"
+      />
+      
+      {/* Overlay optionnel pour adoucir le passage au noir/sombre si nécessaire */}
+      <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10"></div>
+    </div>
+
+    {/* Optionnel : Garder un petit texte de rappel en dessous si besoin, sinon supprimer ce div */}
+    
+  </div>
+</div>
+</>)}
+            
           </div>
         </div>
       </header>

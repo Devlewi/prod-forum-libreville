@@ -81,8 +81,18 @@ export default function Navbar({ logoUrl }: NavbarProps) {
       { href: "/le-palais-des-congres-omar-bongo-ondimba", label: t("sub_apropos.palais") },
     ],
     forum: [
-      { href: "/la-thematique", label: t("sub_forum.thematique") },
-      { href: "/le-programme", label: t("sub_forum.programme") },
+      { href: "/la-thematique", label: t("sub_forum.thematique"), isExternal: false },
+      { 
+        href: "https://controlpanel.forumlibreville.org/wp-content/uploads/2026/04/Plaquette-Forum-international-de-Libreville-OK10.pdf", 
+        label: t("sub_forum.brochure"),
+        isExternal: true 
+      },      
+      { 
+        href: "https://controlpanel.forumlibreville.org/wp-content/uploads/2026/05/Declaration-de-Libreville-FIL2026.pdf", 
+        label: t("sub_forum.declaration"),
+        isExternal: true 
+      },      
+      { href: "/le-programme", label: t("sub_forum.programme"), isExternal: false },
       //{ href: "/les-intervenants", label: t("sub_forum.intervenants") },
     ],
   };
@@ -153,10 +163,11 @@ export default function Navbar({ logoUrl }: NavbarProps) {
                 {t("forum")} <i className="fa-solid fa-chevron-down text-[8px]" />
               </button>
               <div className="dropdown-menu hidden group-hover:block absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-green-600 py-2">
-                {menuItems.forum.map((item) => (
+                {menuItems.forum.map((item, index) => (
                   <Link 
-                    key={item.href} 
-                    href={getLink(item.href)} 
+                    key={`${item.href}-${index}`} // Clé unique garantie
+                    href={item.isExternal ? item.href : getLink(item.href)}
+                    target={item.isExternal ? "_blank" : "_self"}
                     className="font-extrabold block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 uppercase text-[10px]"
                   >
                     {item.label}
@@ -165,9 +176,9 @@ export default function Navbar({ logoUrl }: NavbarProps) {
               </div>
             </div>
 
-            {/* <Link href={getLink("/actualites")} className="font-extrabold px-2 py-1 hover:text-blue-900 transition uppercase">{t("actualites")}</Link> */}
+            <Link href={getLink("/actualites")} className="font-extrabold px-2 py-1 hover:text-blue-900 transition uppercase">{t("actualites")}</Link>
             <Link href={getLink("/inscription")} className="font-extrabold px-2 py-1 hover:text-green-900 transition uppercase">{t("inscription")}</Link>
-            {/*<Link href={getLink("/mediatheque")} className="font-extrabold px-2 py-1 hover:text-green-900 transition uppercase">{t("mediatheque")}</Link> */}
+            <Link href={getLink("/mediatheque")} className="font-extrabold px-2 py-1 hover:text-green-900 transition uppercase">{t("mediatheque")}</Link> 
             <Link href={getLink("/contact")} className="font-extrabold px-2 py-1 hover:text-blue-900 transition uppercase">{t("contact")}</Link>
           </div>
 
@@ -234,10 +245,11 @@ export default function Navbar({ logoUrl }: NavbarProps) {
                 <i className={`fa-solid fa-chevron-down text-xs transition-transform ${activeAccordion === "forum" ? "rotate-180" : ""}`} />
               </button>
               <div className={`${activeAccordion === "forum" ? "flex" : "hidden"} flex-col mt-2 p-2 bg-slate-100 rounded-xl`}>
-                {menuItems.forum.map((item) => (
+                {menuItems.forum.map((item, index) => (
                   <Link 
-                    key={item.href} 
-                    href={getLink(item.href)} 
+                    key={`${item.href}-${index}`} // Clé unique garantie
+                    href={item.isExternal ? item.href : getLink(item.href)}
+                    target={item.isExternal ? "_blank" : "_self"}                    
                     className="py-3 font-extrabold px-4 text-sm  text-blue-900 uppercase flex items-center"
                   >
                     <i className="fa-solid fa-circle mr-3 text-[#009e60] opacity-40 text-[6px]" />
@@ -248,14 +260,14 @@ export default function Navbar({ logoUrl }: NavbarProps) {
             </div>
 
             {/* Liens simples */}
-            {/*
+
             <Link 
               href={getLink("/actualites")} 
               className="py-3 text-xl  uppercase text-blue-950 font-extrabold border-b border-slate-50"
             >
               {t("actualites")}
             </Link>
-            */}
+
 
             <Link 
               href={getLink("/inscription")} 
@@ -264,7 +276,7 @@ export default function Navbar({ logoUrl }: NavbarProps) {
               {t("inscription")}
             </Link>
 
-{/*<Link href={getLink("/mediatheque")} className="py-3 text-xl  uppercase text-blue-950 font-extrabold border-b border-slate-50" > {t("mediatheque")} </Link>*/}
+<Link href={getLink("/mediatheque")} className="py-3 text-xl  uppercase text-blue-950 font-extrabold border-b border-slate-50" > {t("mediatheque")} </Link>
 
             <Link 
               href={getLink("/contact")} 

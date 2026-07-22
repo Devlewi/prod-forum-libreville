@@ -1,7 +1,7 @@
 
 import { Metadata } from 'next';
 import { getMessages } from '@/app/lib/utils';
-import MinisteresEnChargeUI from '@/app/ui/MinisteresEnChargeUI';
+import MinisteresFrChargeUI from '@/app/ui/MinisteresFrChargeUI';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -30,5 +30,5 @@ export default async function MinisteresEnChargePage({ params }: Props) {
   const { locale } = await params;
 
   // On appelle l'UI dédiée aux ministères
-  return <MinisteresEnChargeUI locale={locale} />;
+  return <MinisteresFrChargeUI locale={locale} />;
 }

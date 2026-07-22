@@ -27,24 +27,33 @@ const FifthPartSection = ({ sectioncinq, lang }: SectionCinqProps) => {
 
   if (!sectioncinq) return null;
 
-  const getVideoThumbnail = (videoUrl: string | null): string => {
-    if (!videoUrl) return "/images/placeholder-media.webp";
-    const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-    const match = videoUrl.match(regExp);
-    if (match && match[2].length === 11) {
-      return `https://img.youtube.com/vi/${match[2]}/hqdefault.jpg`;
-    }
-    return "/images/placeholder-media.webp";
-  };
+const getVideoThumbnail = (videoUrl: string | null): string => {
+  if (!videoUrl) return "/images/placeholder-media.webp";
+  
+  // Ajout du support pour 'shorts/' et nettoyage de la regex
+  const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
+  const match = videoUrl.match(regExp);
+  
+  if (match && match[1].length === 11) {
+    return `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg`;
+  }
+  return "/images/placeholder-media.webp";
+};
 
   const getEmbedUrl = (url: string | null) => {
-    if (!url) return null;
-    if (url.includes("youtube.com") || url.includes("youtu.be")) {
-      const id = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/)?.[1];
-      return `https://www.youtube.com/embed/${id}?autoplay=1`;
-    }
-    return url; // Pour d'autres formats ou intégrations directes
-  };
+  if (!url) return null;
+  
+  // Cette regex couvre : youtube.com/watch?v=, youtube.com/shorts/, youtu.be/, youtube.com/embed/
+  const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
+  const match = url.match(regExp);
+
+  if (match && match[1].length === 11) {
+    const videoId = match[1];
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  }
+  
+  return url; // Retourne l'URL originale si ce n'est pas du YouTube (ex: Vimeo ou direct)
+};
 
   const t = {
     fr: { viewAlbum: "Voir l'album complet", videoBadge: "Vidéo", photoBadge: "Photo", albumPath: "/fr/mediatheque" },

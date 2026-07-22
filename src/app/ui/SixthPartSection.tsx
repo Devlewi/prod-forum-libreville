@@ -4,11 +4,16 @@
 import React from "react";
 import Link from "next/link";
 
+interface PartnerLogo {
+  image: string;
+  lien: string;
+}
+
 interface SectionSixProps {
   sectionsix: {
     titre: string;
     sous_titre: string;
-    logos: string[];
+    logos: PartnerLogo[];
   };
   lang: "fr" | "en";
 }
@@ -46,21 +51,32 @@ const SixthPartSection = ({ sectionsix, lang }: SectionSixProps) => {
       {/* CONTENEUR DES LOGOS */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap gap-6 md:gap-10 justify-center items-center">
-          {sectionsix.logos?.map((logoUrl, index) => (
-            <div key={index} className="w-full sm:w-auto flex-none">
-              <div className="w-full sm:w-[200px] md:w-[260px] h-[120px] md:h-[160px] 
+          {sectionsix.logos?.map((partner, index) => {
+            // Sécurité au cas où l'API renvoie encore un string au lieu d'un objet
+            const logoSrc = typeof partner === 'string' ? partner : partner.image;
+            const logoLink = typeof partner === 'object' ? partner.lien : '#';
+
+            return (
+              <div key={index} className="w-full sm:w-auto flex-none">
+                <a 
+                  href={logoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-[200px] md:w-[260px] h-[120px] md:h-[160px] 
                             bg-white rounded-xl shadow-sm border border-slate-100 
                             flex items-center justify-center p-6
-                            transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                <img
-                  src={logoUrl}
-                  alt={`Partner logo ${index + 1}`}
-                  className="w-full h-full object-contain transition-all duration-500"
-                  draggable="false"
-                />
+                            transition-all duration-300 hover:shadow-md hover:-translate-y-1 block"
+                >
+                  <img
+                    src={logoSrc}
+                    alt={`Partner logo ${index + 1}`}
+                    className="w-full h-full object-contain transition-all duration-500"
+                    draggable="false"
+                  />
+                </a>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

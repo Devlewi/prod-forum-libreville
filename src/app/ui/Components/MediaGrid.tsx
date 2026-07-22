@@ -20,10 +20,14 @@ interface MediaGridProps {
 
 const getEmbedUrl = (url?: string) => {
   if (!url) return null;
-  const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  
+  // Même Regex améliorée
+  const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
   const match = url.match(regExp);
-  if (match && match[2].length === 11) {
-    return `https://www.youtube.com/embed/${match[2]}?autoplay=1`;
+  
+  if (match && match[1].length === 11) {
+    // On transforme l'ID en URL d'intégration standard
+    return `https://www.youtube.com/embed/${match[1]}?autoplay=1`;
   }
   return url;
 };
